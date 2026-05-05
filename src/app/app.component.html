@@ -2,85 +2,22 @@
   <!-- Navigation -->
   <nav class="nav">
     <div class="container nav-content">
-      <div class="logo">
-        <img src="/logo.png" alt="Techno Logo" class="logo-img">
+      <div class="logo" routerLink="/">
+        <img src="/logo.png" alt="Techno Logo" class="logo-img" style="cursor: pointer;">
       </div>
       <div class="nav-links">
-        <a href="#features">Features</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+        <a routerLink="/" fragment="features">Features</a>
+        <a routerLink="/" fragment="about">About</a>
+        <a routerLink="/" fragment="contact">Contact</a>
       </div>
-      <button class="btn-primary">Get Started</button>
+      <button class="btn-primary" routerLink="/apply">Get Started</button>
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <header class="hero">
-    <div class="hero-bg-glow"></div>
-    <div class="container hero-content">
-      <h1 class="hero-title">Experience the Future of <span class="blue-text">Technology</span></h1>
-      <p class="hero-subtitle">Innovative solutions for the modern world. Elevate your workflow with Techno's next-generation platform.</p>
-      <div class="hero-actions">
-        <button class="btn-primary">Explore Now</button>
-        <button class="btn-outline">Watch Demo</button>
-      </div>
-    </div>
-  </header>
-
-  <!-- Features Section -->
-  <section id="features" class="features">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Core <span class="blue-text">Features</span></h2>
-        <p class="section-subtitle">Everything you need to scale your business and stay ahead.</p>
-      </div>
-      <div class="feature-grid">
-        <div class="feature-card glass">
-          <div class="feature-icon blue-text">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-          </div>
-          <h3>Advanced Analytics</h3>
-          <p>Get deep insights into your data with our AI-powered analytics engine.</p>
-        </div>
-        <div class="feature-card glass">
-          <div class="feature-icon blue-text">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-          </div>
-          <h3>Secure by Design</h3>
-          <p>Enterprise-grade security built into every layer of our infrastructure.</p>
-        </div>
-        <div class="feature-card glass">
-          <div class="feature-icon blue-text">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-          </div>
-          <h3>Lightning Fast</h3>
-          <p>Experience zero-latency performance with our global edge network.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Showcase Section -->
-  <section class="showcase">
-    <div class="container showcase-container">
-      <div class="showcase-content glass">
-        <h2 class="blue-text">Build Faster. Go Further.</h2>
-        <p>Our platform provides all the tools necessary to take your project from concept to production in record time.</p>
-        <ul class="showcase-list">
-          <li>✓ Seamless Integration</li>
-          <li>✓ Real-time Collaboration</li>
-          <li>✓ 24/7 Priority Support</li>
-        </ul>
-      </div>
-      <div class="showcase-visual">
-         <div class="visual-box glass">
-            <div class="visual-glow"></div>
-            <!-- Image will be generated or placeholder -->
-            <img src="techno-visual.png" alt="Technology Visual" class="visual-img">
-         </div>
-      </div>
-    </div>
-  </section>
+  <!-- Main Content Area (Routing) -->
+  <main style="min-height: 80vh;">
+    <router-outlet></router-outlet>
+  </main>
 
   <!-- Footer -->
   <footer class="footer">
@@ -103,7 +40,7 @@
       </div>
       <div class="link-group">
         <h4>Opportunities</h4>
-        <a href="#" class="highlight-link">Internships 2024</a>
+        <a routerLink="/apply" class="highlight-link">Internships 2024</a>
         <a href="#">Graduate Programs</a>
         <a href="#">Direct Hiring</a>
         <a href="#">Referral Program</a>
@@ -118,7 +55,7 @@
       <div class="footer-cta glass">
         <h4>Let's build together</h4>
         <p>Ready to start your journey with us?</p>
-        <button class="btn-primary small-btn">Apply for Internship</button>
+        <button class="btn-primary small-btn" routerLink="/apply">Apply for Internship</button>
       </div>
     </div>
     <div class="footer-bottom container">
@@ -132,5 +69,3 @@
     </div>
   </footer>
 </div>
-
-<router-outlet />
