@@ -129,7 +129,7 @@
 }
 
 .tech-card {
-  padding: 3rem 2rem;
+  padding: 1rem 1rem;
   border-radius: 24px;
   text-align: center;
   transition: var(--transition);
@@ -178,14 +178,14 @@
 }
 
 .showcase-container {
-  display: grid;
+  display: grid !important;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: center;
 }
 
 .showcase-content {
-  padding: 3rem;
+  padding: 1rem;
   border-radius: 32px;
 }
 
@@ -261,15 +261,35 @@
   }
   
   .section-title {
-    font-size: 1.2rem;
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem;
+    padding: 0 1rem;
   }
   
   .feature-grid {
     grid-template-columns: 1fr;
   }
 
+  .showcase-container {
+    display: grid !important;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
+  }
+
   .showcase-content {
-    padding: 2rem 1.5rem;
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+  }
+  
+  .showcase-list {
+    text-align: left;
+    display: inline-block;
+    margin: 2rem auto 0;
   }
 }
 
