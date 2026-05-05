@@ -145,6 +145,21 @@
   margin-bottom: 2rem;
   display: flex;
   justify-content: center;
+  align-items: center;
+  height: 80px;
+}
+
+.tech-img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 10px rgba(0, 112, 243, 0.2));
+  transition: var(--transition);
+}
+
+.tech-card:hover .tech-img {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 20px rgba(0, 112, 243, 0.5));
 }
 
 .tech-card h3 {
