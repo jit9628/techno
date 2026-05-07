@@ -1,0 +1,178 @@
+.apply-section {
+  padding: 100px 0;
+  background-color: #ffffff;
+  min-height: 100vh;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #000;
+}
+
+.section-title .blue-text {
+  color: #0070f3;
+}
+
+.section-subtitle {
+  color: #6c757d;
+  font-size: 1.1rem;
+}
+
+.apply-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem;
+  border-radius: 32px;
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+}
+
+.apply-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Section Titles */
+.form-section-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #0070f3;
+  margin-top: 1.5rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 2px solid #e9ecef;
+  letter-spacing: 0.3px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group.full-width {
+  grid-column: span 2;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #212529;
+}
+
+.required {
+  color: #e74c3c;
+  font-weight: 700;
+}
+
+.form-group input, 
+.form-group textarea, 
+.form-group select {
+  background: #ffffff;
+  border: 1px solid #dee2e6;
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  color: #212529;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input[type="file"] {
+  padding: 0.6rem 1rem;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus, 
+.form-group select:focus {
+  border-color: #0070f3;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(0, 112, 243, 0.15);
+  outline: none;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #adb5bd;
+}
+
+.form-group select option {
+  background: #ffffff;
+  color: #212529;
+}
+
+/* Terms Checkbox */
+.terms-check {
+  margin-top: 1rem;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: #495057;
+  cursor: pointer;
+  line-height: 1.6;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-top: 3px;
+  accent-color: #0070f3;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.checkbox-label a {
+  color: #0070f3;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.checkbox-label a:hover {
+  color: #0056b3;
+}
+
+.form-actions {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.large-btn {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2.2rem;
+  }
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .form-group.full-width {
+    grid-column: span 1;
+  }
+  .apply-container {
+    padding: 2rem 1.5rem;
+  }
+}

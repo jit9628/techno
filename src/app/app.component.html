@@ -1,0 +1,74 @@
+<div class="landing-page">
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="container nav-content">
+      <div class="logo" routerLink="/">
+        <img src="/logo.png" alt="Techno Logo" class="logo-img" style="cursor: pointer;">
+      </div>
+      <div class="nav-links">
+        <a routerLink="/" fragment="features">Features</a>
+        <a routerLink="/" fragment="about">About</a>
+        <a routerLink="/" fragment="contact">Contact</a>
+        <a routerLink="/privacy">Privacy</a>
+      </div>
+      <button class="btn-primary" routerLink="/apply">Get Started</button>
+    </div>
+  </nav>
+
+  <!-- Main Content Area (Routing) -->
+  <main style="min-height: 80vh;">
+    <router-outlet></router-outlet>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="/logo.png" alt="Techno Logo" class="logo-img footer-logo-img">
+        <p class="brand-desc">Empowering the next generation of tech leaders through innovation and excellence. Join us in shaping the digital landscape.</p>
+        <div class="social-links">
+          <a href="#" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg></a>
+          <a href="#" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="#" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        </div>
+      </div>
+      <div class="link-group">
+        <h4>Product</h4>
+        <a href="#">Solutions</a>
+        <a href="#">Cloud Services</a>
+        <a href="#">Security</a>
+        <a href="#">Pricing</a>
+      </div>
+      <div class="link-group">
+        <h4>Opportunities</h4>
+        <a routerLink="/apply" class="highlight-link">Internships 2024</a>
+        <a href="#">Graduate Programs</a>
+        <a href="#">Direct Hiring</a>
+        <a href="#">Referral Program</a>
+      </div>
+      <div class="link-group">
+        <h4>Company</h4>
+        <a href="#">About Us</a>
+        <a href="#">Our Culture</a>
+        <a href="#">Careers</a>
+        <a href="#">Contact Us</a>
+      </div>
+      <div class="footer-cta glass">
+        <h4>Let's build together</h4>
+        <p>Ready to start your journey with us?</p>
+        <button class="btn-primary small-btn" routerLink="/apply">Apply for Internship</button>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <div class="footer-bottom-content">
+        <p>&copy; 2025 divijix technology. All rights reserved . Built with innovation.</p>
+        <div class="footer-legal">
+          <a routerLink="/privacy">Privacy Policy</a>
+          <a routerLink="/disclaimer">Disclaimer</a>
+          <a routerLink="/terms">Terms & Conditions</a>
+          <a routerLink="/cookie-policy">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
