@@ -1,0 +1,34 @@
+<section class="batches-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Upcoming <span class="blue-text">Batches</span></h2>
+      <p class="section-subtitle">Join our latest cohorts and start your journey towards excellence.</p>
+    </div>
+
+    <div class="batches-grid">
+      <div *ngFor="let batch of batches" class="batch-card glass">
+        <div class="batch-status" [ngClass]="{'filling-fast': batch.status === 'Filling Fast'}">
+          {{batch.status}}
+        </div>
+        <div class="batch-content">
+          <h3>{{batch.course}}</h3>
+          <div class="batch-details">
+            <p>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              <strong>Date:</strong> {{batch.date}}
+            </p>
+            <p>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <strong>Timing:</strong> {{batch.timing}}
+            </p>
+            <p>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              <strong>Duration:</strong> {{batch.duration}}
+            </p>
+          </div>
+          <button class="btn-primary small-btn" routerLink="/apply">Enroll Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
