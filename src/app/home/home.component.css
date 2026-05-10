@@ -111,21 +111,26 @@
 .founders-images {
   display: flex;
   align-items: center;
+  gap: 1.5rem; /* Add space between photos */
   position: relative;
 }
 
 .author-img {
-  width: 75px;
-  height: 75px;
-  border-radius: 50%;
+  width: 90px;
+  height: 110px; /* Rectangular shape */
+  border-radius: 12px; /* Soft rounded corners */
   object-fit: cover;
-  border: 3px solid #ffffff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: 2px solid #eeeeee;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.author-img:hover {
+  transform: scale(1.05);
 }
 
 .second-img {
-  margin-left: -20px; /* Slight overlap for modern aesthetic */
-  z-index: 1;
+  margin-left: 0; /* Remove overlap */
 }
 
 .author-info {
