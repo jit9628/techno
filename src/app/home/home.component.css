@@ -105,14 +105,27 @@
 .author-box {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 2rem;
+}
+
+.founders-images {
+  display: flex;
+  align-items: center;
+  position: relative;
 }
 
 .author-img {
-  width: 70px;
-  height: 70px;
+  width: 75px;
+  height: 75px;
   border-radius: 50%;
   object-fit: cover;
+  border: 3px solid #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.second-img {
+  margin-left: -20px; /* Slight overlap for modern aesthetic */
+  z-index: 1;
 }
 
 .author-info {
