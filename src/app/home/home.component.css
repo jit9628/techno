@@ -560,6 +560,151 @@
   width: 100%;
 }
 
+/* Big Thinkers Section */
+.big-thinkers {
+  background: #7b113a; /* Deep Maroon */
+  color: #ffffff;
+  padding: 60px 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.thinkers-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.thinker-eyebrow {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.italic-big {
+  font-style: italic;
+  font-weight: 700;
+  font-size: 2.2rem;
+  color: #ff3344; /* Brighter red for accent */
+}
+
+.thinker-title {
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 3rem;
+  max-width: 600px;
+}
+
+.thinker-meta {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  align-items: flex-start;
+}
+
+.meta-line {
+  width: 60px;
+  height: 2px;
+  background: #ffffff;
+  margin-top: 0.8rem;
+}
+
+.meta-info strong {
+  display: block;
+  font-size: 1.4rem;
+  margin-bottom: 0.3rem;
+}
+
+.meta-info span {
+  font-size: 0.95rem;
+  opacity: 0.8;
+  line-height: 1.4;
+  display: block;
+}
+
+.thinker-btn {
+  background: #ff3344;
+  color: #ffffff;
+  border: none;
+  padding: 1rem 2.5rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.thinker-btn:hover {
+  background: #ffffff;
+  color: #7b113a;
+  transform: translateY(-3px);
+}
+
+.thinker-visual {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.thinker-visual img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+
+.pattern-overlay {
+  position: absolute;
+  top: 10%;
+  right: -20px;
+  width: 120%;
+  height: 80%;
+  background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.05) 0, rgba(255,255,255,0.05) 1px, transparent 0, transparent 20px);
+  z-index: 1;
+}
+
+@media (max-width: 992px) {
+  .thinkers-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 3rem;
+  }
+  
+  .thinker-title {
+    margin: 0 auto 3rem;
+    font-size: 2.5rem;
+  }
+  
+  .thinker-meta {
+    justify-content: center;
+  }
+  
+  .meta-line {
+    display: none;
+  }
+  
+  .thinker-visual {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .thinker-title {
+    font-size: 1.8rem;
+  }
+  
+  .italic-big {
+    font-size: 1.8rem;
+  }
+}
+
+
 .success-stories .container {
   max-width: 1200px;
   margin: 0 auto;
