@@ -12,7 +12,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class BatchesComponent implements OnInit {
   batches: any[] = [];
-  apiUrl = 'http://localhost:3000/api/batches';
+  apiUrl = 'https://www.divijixtechnology.com/api/batches';
 
   constructor(private http: HttpClient) {}
 
