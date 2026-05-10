@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap');
 
 :root {
-  --bg-dark: #050505;
-  --bg-card: #0a0a0a;
+  --bg-dark: #ffffff;
+  --bg-card: #f8f8f8;
   --primary-blue: #0070f3;
   --accent-blue: #00dfd8;
-  --text-main: #ffffff;
-  --text-muted: #a1a1a1;
-  --glass-bg: rgba(255, 255, 255, 0.03);
-  --glass-border: rgba(255, 255, 255, 0.08);
-  --blue-glow: rgba(0, 112, 243, 0.3);
+  --text-main: #1a1a1a;
+  --text-muted: #666666;
+  --glass-bg: rgba(0, 0, 0, 0.02);
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --blue-glow: rgba(0, 112, 243, 0.1);
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
