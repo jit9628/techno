@@ -49,15 +49,13 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 70px;
+  height: 80px;
   display: flex;
   align-items: center;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.85); /* White glass effect */
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-  overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: #ffffff;
+  border-bottom: 1px solid #eeeeee;
+  transition: all 0.4s ease;
 }
 
 .nav-content {
@@ -65,75 +63,77 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  perspective: 1000px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .logo-img {
-  height: 50px;
+  height: 60px;
   width: auto;
   display: block;
   object-fit: contain;
-  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  filter: drop-shadow(0 0 10px rgba(0, 112, 243, 0.2));
-}
-
-.logo:hover .logo-img {
-  transform: translateZ(30px) rotateY(15deg);
+  transition: transform 0.3s ease;
 }
 
 .nav-links {
   display: flex;
-  gap: 3rem;
+  gap: 2.5rem;
+  margin-left: auto;
+  margin-right: 3rem;
 }
 
 .nav-links a {
   position: relative;
-  font-weight: 600;
-  color: #1a1a1a;
+  font-weight: 700;
+  color: #333333;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
-  font-size: 0.9rem;
-  transition: all 0.3s ease;
-  transform-style: preserve-3d;
+  letter-spacing: 0.5px;
+  font-size: 0.85rem;
+  transition: color 0.3s ease;
+  text-decoration: none;
+  padding: 10px 0;
 }
 
 .nav-links a::after {
   content: '';
   position: absolute;
-  bottom: -5px;
+  bottom: 0;
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--primary-blue), var(--accent-blue));
+  background: #e41e26; /* Tech Mahindra Red */
   transition: width 0.3s ease;
-  box-shadow: 0 0 10px var(--primary-blue);
 }
 
-.nav-links a:hover {
-  color: var(--text-main);
-  transform: translateZ(20px);
-  text-shadow: 0 0 15px rgba(0, 112, 243, 0.6);
+.nav-links a:hover,
+.nav-links a.active {
+  color: #000000;
 }
 
-.nav-links a:hover::after {
+.nav-links a:hover::after,
+.nav-links a.active::after {
   width: 100%;
 }
 
-.nav .btn-primary {
-  background: linear-gradient(135deg, var(--primary-blue), #50a1ff);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 10px 20px rgba(0, 112, 243, 0.3),
-              inset 0 0 15px rgba(255, 255, 255, 0.1);
-  transform-style: preserve-3d;
-  position: relative;
-  overflow: hidden;
+.nav-actions {
+  display: flex;
+  align-items: center;
 }
 
-.nav .btn-primary:hover {
-  transform: translateY(-3px) rotateX(10deg);
-  box-shadow: 0 15px 30px rgba(0, 112, 243, 0.5),
-              inset 0 0 20px rgba(255, 255, 255, 0.2);
+.search-icon {
+  color: #333333;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
 }
+
+.search-icon:hover {
+  color: #e41e26;
+}
+
+/* Button styles moved or removed */
 
 /* Footer */
 .footer {
@@ -292,33 +292,17 @@
   }
   
   .nav-content {
-    justify-content: space-between !important;
-    display: flex !important;
-    padding: 0 0.8rem !important;
-    flex-wrap: nowrap !important;
+    padding: 0 1rem !important;
   }
   
-  .nav-content .nav-links {
-    display: flex !important;
-    visibility: visible !important;
-    width: auto !important;
-    height: auto !important;
-    gap: 0.5rem !important;
+  .nav-links {
+    display: none !important;
   }
   
-  .nav-links a {
-    font-size: 0.7rem !important;
-  }
 
-  .nav .btn-primary {
-    display: block !important;
-    font-size: 0.7rem !important;
-    padding: 0.4rem 0.8rem !important;
-  }
   
   .logo-img {
-    height: 35px !important;
-    margin: 0 !important;
+    height: 40px !important;
   }
   
   .footer-grid {

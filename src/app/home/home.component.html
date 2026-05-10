@@ -51,6 +51,101 @@
   </div>
 </section>
 
+<!-- Quick Info Section -->
+<section class="quick-info-section">
+  <div class="container">
+    <div class="quick-info-tabs">
+      <button [class.active]="activeTab === 'why-us'" (click)="setTab('why-us')">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        Why Choose Us
+      </button>
+      <button [class.active]="activeTab === 'services'" (click)="setTab('services')">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        Services
+      </button>
+      <button [class.active]="activeTab === 'tech'" (click)="setTab('tech')">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        Technology We Use
+      </button>
+    </div>
+
+    <div class="quick-info-content glass" [ngSwitch]="activeTab">
+      <!-- Why Choose Us Content -->
+      <div *ngSwitchCase="'why-us'" class="tab-pane animate-in">
+        <div class="pane-grid">
+          <div class="pane-text">
+            <h2>Why Choose DJT Technology?</h2>
+            <p>We combine deep industry expertise with cutting-edge technical skills to deliver solutions that drive real business value.</p>
+            <ul class="check-list">
+              <li><span>✓</span> <strong>Innovation First:</strong> We stay ahead of the curve with AI-driven development.</li>
+              <li><span>✓</span> <strong>Expert Team:</strong> Our developers are specialists in Java, Angular, and Cloud.</li>
+              <li><span>✓</span> <strong>Client-Centric:</strong> Your success is our primary metric of achievement.</li>
+              <li><span>✓</span> <strong>Scalable Solutions:</strong> Built to grow with your business needs.</li>
+            </ul>
+          </div>
+          <div class="pane-image">
+            <img src="/analytics-real.png" alt="Why Choose Us">
+          </div>
+        </div>
+      </div>
+
+      <!-- Services Content -->
+      <div *ngSwitchCase="'services'" class="tab-pane animate-in">
+        <div class="pane-grid">
+          <div class="pane-text">
+            <h2>Our Core Services</h2>
+            <p>From strategic consulting to full-stack implementation, we cover the entire digital lifecycle.</p>
+            <div class="services-mini-grid">
+              <div class="service-mini-card">
+                <h3>Software Dev</h3>
+                <p>Custom enterprise solutions built for reliability.</p>
+              </div>
+              <div class="service-mini-card">
+                <h3>AI & GenAI</h3>
+                <p>Integrating intelligence into your workflows.</p>
+              </div>
+              <div class="service-mini-card">
+                <h3>Cloud Migration</h3>
+                <p>Secure and efficient cloud transformation.</p>
+              </div>
+              <div class="service-mini-card">
+                <h3>Mobile Apps</h3>
+                <p>High-performance cross-platform applications.</p>
+              </div>
+            </div>
+          </div>
+          <div class="pane-image">
+            <img src="/security-real.png" alt="Our Services">
+          </div>
+        </div>
+      </div>
+
+      <!-- Technology Content -->
+      <div *ngSwitchCase="'tech'" class="tab-pane animate-in">
+        <div class="pane-grid">
+          <div class="pane-text">
+            <h2>Technologies We Use</h2>
+            <p>We leverage the most robust and modern stacks to ensure your products are future-proof.</p>
+            <div class="tech-stack-list">
+              <div class="tech-tag">Java</div>
+              <div class="tech-tag">Spring Boot</div>
+              <div class="tech-tag">Angular</div>
+              <div class="tech-tag">Flutter</div>
+              <div class="tech-tag">AWS</div>
+              <div class="tech-tag">Azure</div>
+              <div class="tech-tag">PostgreSQL</div>
+              <div class="tech-tag">Docker</div>
+            </div>
+          </div>
+          <div class="pane-image">
+            <img src="/speed-real.png" alt="Technology We Use">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Success Stories Section -->
 <section class="success-stories">
   <!-- ... existing content ... -->
@@ -221,22 +316,22 @@
     </div>
     <div class="feature-grid">
       <div class="feature-card glass">
-        <div class="feature-icon blue-text">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        <div class="feature-image">
+          <img src="/analytics-feat.png" alt="Advanced Analytics" class="feat-img">
         </div>
         <h3>Advanced Analytics</h3>
         <p>Get deep insights into your data with our AI-powered analytics engine.</p>
       </div>
       <div class="feature-card glass">
-        <div class="feature-icon blue-text">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        <div class="feature-image">
+          <img src="/security-feat.png" alt="Secure by Design" class="feat-img">
         </div>
         <h3>Secure by Design</h3>
         <p>Enterprise-grade security built into every layer of our infrastructure.</p>
       </div>
       <div class="feature-card glass">
-        <div class="feature-icon blue-text">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        <div class="feature-image">
+          <img src="/speed-feat.png" alt="Lightning Fast" class="feat-img">
         </div>
         <h3>Lightning Fast</h3>
         <p>Experience zero-latency performance with our global edge network.</p>
@@ -245,49 +340,6 @@
   </div>
 </section>
 
-<!-- Technologies Section -->
-<section class="tech-section">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Core Technologies</h2>
-      <p class="section-subtitle">We specialize in industry-leading stacks to build robust solutions.</p>
-    </div>
-    
-    <div class="tech-grid">
-      <div class="tech-card glass">
-        <div class="tech-icon">
-          <img src="/java-icon.png" alt="Java" class="tech-img">
-        </div>
-         <h3>Java</h3>
-         <p>Enterprise-grade backend systems built with high performance and reliability.</p>
-       </div>
-      
-      <div class="tech-card glass">
-        <div class="tech-icon">
-          <img src="/springboot-icon.png" alt="Spring Boot" class="tech-img">
-        </div>
-        <h3>Spring Boot</h3>
-        <p>Microservices architecture designed for scalability and rapid development.</p>
-      </div>
-      
-      <div class="tech-card glass">
-        <div class="tech-icon">
-          <img src="/angular-icon.png" alt="Angular" class="tech-img">
-        </div>
-        <h3>Angular</h3>
-        <p>Modern frontend framework for creating dynamic and responsive user interfaces.</p>
-      </div>
-      
-      <div class="tech-card glass">
-        <div class="tech-icon">
-          <img src="/flutter-icon.png" alt="Flutter" class="tech-img">
-        </div>
-        <h3>Flutter</h3>
-        <p>Cross-platform mobile applications with native performance and beautiful design.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- Showcase Section -->
 <section class="showcase">
@@ -310,6 +362,108 @@
   </div>
 </section>
 
+
+<!-- FAQ Section -->
+<section id="faq" class="faq-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <p class="section-subtitle">Got questions? We've got answers.</p>
+    </div>
+    <div class="faq-accordion">
+      <div class="faq-item" [class.active]="activeFaq === 0">
+        <button class="faq-question" (click)="toggleFaq(0)">
+          What is your pricing model?
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-answer">
+          <p>Our pricing is project-based and varies depending on the complexity, scope, and timeline. We offer flexible engagement models tailored to your business needs, from fixed-price contracts to time-and-materials arrangements.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item" [class.active]="activeFaq === 1">
+        <button class="faq-question" (click)="toggleFaq(1)">
+          What is the typical delivery time?
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-answer">
+          <p>Delivery timelines depend on project scale. Small-scale applications usually take 4-8 weeks, while complex enterprise-grade solutions may range from 3 to 6 months. We prioritize agile delivery to provide value early and often.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item" [class.active]="activeFaq === 2">
+        <button class="faq-question" (click)="toggleFaq(2)">
+          Do you provide post-launch support?
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-answer">
+          <p>Absolutely. We provide comprehensive 24/7 dedicated support and maintenance packages. Our team remains available for updates, security patches, and scaling as your business grows.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact-section">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h2 class="contact-title">Let's Build Something Great Together</h2>
+        <p class="contact-desc">Ready to transform your business with cutting-edge technology? Get in touch with us today.</p>
+        
+        <div class="info-items">
+          <div class="info-item">
+            <div class="icon-circle"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+            <div>
+              <h3>Email Us</h3>
+              <p>info&#64;djttechnology.com</p>
+            </div>
+          </div>
+          
+          <div class="info-item">
+            <div class="icon-circle"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+            <div>
+              <h3>Call Us</h3>
+              <p>+91 8009799550</p>
+            </div>
+          </div>
+          
+          <div class="info-item">
+            <div class="icon-circle"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div>
+              <h3>Visit Us</h3>
+              <p>123 Tech Hub, Silicon Valley of India, Bangalore.</p>
+            </div>
+          </div>
+        </div>
+        
+        <a href="https://wa.me/918009799550" target="_blank" class="whatsapp-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Chat on WhatsApp
+        </a>
+      </div>
+      
+      <div class="contact-form-container glass">
+        <form class="contact-form">
+          <div class="form-group">
+            <input type="text" placeholder="Full Name" required>
+          </div>
+          <div class="form-group">
+            <input type="email" placeholder="Email Address" required>
+          </div>
+          <div class="form-group">
+            <input type="text" placeholder="Subject" required>
+          </div>
+          <div class="form-group">
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- Newsletter Bar -->
 <section class="newsletter-bar">
