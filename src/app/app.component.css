@@ -27,14 +27,14 @@
   align-items: center;
   justify-content: center;
   pointer-events: none;
-  background-color: #050505; /* Deep dark background on the bottom layer */
+  background-color: #ffffff; /* White background for light theme */
 }
 
 .ai-brain-img {
   width: 60%;
   height: auto;
-  opacity: 0.2;
-  filter: blur(2px);
+  opacity: 0.1;
+  filter: blur(2px) invert(1); /* Invert to make it dark on white */
   animation: floatBrain 10s infinite ease-in-out;
 }
 
@@ -53,9 +53,9 @@
   display: flex;
   align-items: center;
   z-index: 1000;
-  background: rgba(0, 0, 0, 0.85); /* Slightly transparent for depth */
+  background: rgba(255, 255, 255, 0.85); /* White glass effect */
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -73,9 +73,8 @@
   width: auto;
   display: block;
   object-fit: contain;
-  mix-blend-mode: screen;
   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  filter: drop-shadow(0 0 15px rgba(0, 112, 243, 0.3));
+  filter: drop-shadow(0 0 10px rgba(0, 112, 243, 0.2));
 }
 
 .logo:hover .logo-img {
@@ -90,7 +89,7 @@
 .nav-links a {
   position: relative;
   font-weight: 600;
-  color: #ffffff;
+  color: #1a1a1a;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   font-size: 0.9rem;
@@ -139,8 +138,8 @@
 /* Footer */
 .footer {
   padding: 100px 0 40px;
-  background: #030303;
-  border-top: 1px solid var(--glass-border);
+  background: #ffffff;
+  border-top: 1px solid #eeeeee;
   position: relative;
   z-index: 1000;
 }
