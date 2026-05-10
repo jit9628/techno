@@ -1,0 +1,70 @@
+<section class="contact-hero">
+  <div class="container">
+    <div class="contact-hero-content">
+      <h1 class="hero-title">Get in <span class="blue-text">Touch</span></h1>
+      <p class="hero-subtitle">Have questions? We're here to help you start your journey in tech.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact-details">
+  <div class="container">
+    <div class="contact-grid">
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <div class="info-card glass">
+          <div class="info-icon">📍</div>
+          <div class="info-text">
+            <h3>Our Office</h3>
+            <p>Divijix Technology, Sector 62, Noida, Uttar Pradesh, India</p>
+          </div>
+        </div>
+        
+        <div class="info-card glass">
+          <div class="info-icon">📧</div>
+          <div class="info-text">
+            <h3>Email Us</h3>
+            <p>divijixtechnology&#64;zoho.in</p>
+           
+          </div>
+        </div>
+
+        <div class="info-card glass">
+          <div class="info-icon">📞</div>
+          <div class="info-text">
+            <h3>Call Us</h3>
+            <p>+91 9628718599</p>
+            <p>Mon - Sat, 9:00 AM - 6:00 PM</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form-container glass">
+        <form class="contact-form" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" placeholder="Your Name" class="form-control"[(ngModel)]="contactForm.name" name="name">
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="Your Email" class="form-control"[(ngModel)]="contactForm.email" name="email">
+          </div>
+          <div class="form-group">
+            <label>Subject</label>
+            <select class="form-control" [(ngModel)]="contactForm.subject" name="subject">
+              <option value="general">General Inquiry</option>
+              <option value="admission">Admission Question</option>
+              <option value="technical">Technical Support</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea placeholder="Your Message" class="form-control" rows="5" [(ngModel)]="contactForm.message" name="message"></textarea>
+          </div>
+          <button type="submit" class="btn-primary w-100">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

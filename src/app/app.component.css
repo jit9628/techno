@@ -1,8 +1,46 @@
 .landing-page {
   position: relative;
-  background-color: var(--bg-dark);
   width: 100%;
   overflow-x: hidden;
+  background: transparent; /* Make transparent to see background layers */
+}
+
+.bg-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.ai-bg-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  background-color: #050505; /* Deep dark background on the bottom layer */
+}
+
+.ai-brain-img {
+  width: 60%;
+  height: auto;
+  opacity: 0.2;
+  filter: blur(2px);
+  animation: floatBrain 10s infinite ease-in-out;
+}
+
+@keyframes floatBrain {
+  0%, 100% { transform: translateY(0) scale(1); opacity: 0.15; }
+  50% { transform: translateY(-30px) scale(1.05); opacity: 0.25; }
 }
 
 /* Nav */
@@ -15,18 +53,11 @@
   display: flex;
   align-items: center;
   z-index: 1000;
-  background: #000000; /* Solid black background */
+  background: rgba(0, 0, 0, 0.85); /* Slightly transparent for depth */
+  backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-
-
-@keyframes meshRotate {
-  0% { transform: rotate(0deg) scale(1); }
-  50% { transform: rotate(180deg) scale(1.1); }
-  100% { transform: rotate(360deg) scale(1); }
 }
 
 .nav-content {
@@ -51,14 +82,6 @@
   transform: translateZ(30px) rotateY(15deg);
 }
 
-.footer-logo-img {
-  height: 120px;
-  width: auto;
-  margin-bottom: 1rem;
-  object-fit: contain;
-  mix-blend-mode: screen;
-}
-
 .nav-links {
   display: flex;
   gap: 3rem;
@@ -67,7 +90,7 @@
 .nav-links a {
   position: relative;
   font-weight: 600;
-  color: #ffffff; /* White text for links */
+  color: #ffffff;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   font-size: 0.9rem;
@@ -97,8 +120,6 @@
   width: 100%;
 }
 
-
-
 .nav .btn-primary {
   background: linear-gradient(135deg, var(--primary-blue), #50a1ff);
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -107,23 +128,6 @@
   transform-style: preserve-3d;
   position: relative;
   overflow: hidden;
-}
-
-.nav .btn-primary::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transform: rotate(45deg);
-  transition: 0.5s;
-  left: -150%;
-}
-
-.nav .btn-primary:hover::before {
-  left: 100%;
 }
 
 .nav .btn-primary:hover {

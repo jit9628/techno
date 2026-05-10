@@ -2,43 +2,43 @@
   <div class="container">
     <div class="section-header">
       <h2 class="section-title">Apply for <span class="blue-text">Internship</span></h2>
-      <p class="section-subtitle">Start your professional journey with DJT Technology. Fill out the form below to apply.</p>
+      <p class="section-subtitle">Start your professional journey with Techno. Fill out the form below to apply.</p>
     </div>
     
     <div class="apply-container glass">
-      <form class="apply-form">
+      <form class="apply-form" (ngSubmit)="onSubmit()">
 
         <!-- Section 1: Personal Information -->
         <div class="form-section-title">Personal Information</div>
         <div class="form-grid">
           <div class="form-group">
             <label for="fullname">Full Name <span class="required">*</span></label>
-            <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+            <input type="text" id="fullname" name="fullname" [(ngModel)]="formData.fullname" placeholder="Enter your full name" required>
           </div>
           
           <div class="form-group">
             <label for="email">Email ID <span class="required">*</span></label>
-            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+            <input type="email" id="email" name="email" [(ngModel)]="formData.email" placeholder="Enter your email address" required>
           </div>
           
           <div class="form-group">
             <label for="mobile">Mobile Number <span class="required">*</span></label>
-            <input type="tel" id="mobile" name="mobile" placeholder="+91 XXXXX XXXXX" required>
+            <input type="tel" id="mobile" name="mobile" [(ngModel)]="formData.mobile" placeholder="+91 XXXXX XXXXX" required>
           </div>
 
           <div class="form-group">
             <label for="whatsapp">WhatsApp Number</label>
-            <input type="tel" id="whatsapp" name="whatsapp" placeholder="+91 XXXXX XXXXX">
+            <input type="tel" id="whatsapp" name="whatsapp" [(ngModel)]="formData.whatsapp" placeholder="+91 XXXXX XXXXX">
           </div>
           
           <div class="form-group">
             <label for="dob">Date of Birth <span class="required">*</span></label>
-            <input type="date" id="dob" name="dob" required>
+            <input type="date" id="dob" name="dob" [(ngModel)]="formData.dob" required>
           </div>
 
           <div class="form-group">
             <label for="gender">Gender <span class="required">*</span></label>
-            <select id="gender" name="gender" required>
+            <select id="gender" name="gender" [(ngModel)]="formData.gender" required>
               <option value="" disabled selected>Select Gender</option>
               <option value="male">Male</option>
               <option value="female">Female</option>
@@ -48,17 +48,17 @@
 
           <div class="form-group full-width">
             <label for="address">Current Address <span class="required">*</span></label>
-            <textarea id="address" name="address" rows="3" placeholder="Enter your current address" required></textarea>
+            <textarea id="address" name="address" [(ngModel)]="formData.address" rows="3" placeholder="Enter your current address" required></textarea>
           </div>
 
           <div class="form-group">
             <label for="city">City <span class="required">*</span></label>
-            <input type="text" id="city" name="city" placeholder="Enter your city" required>
+            <input type="text" id="city" name="city" [(ngModel)]="formData.city" placeholder="Enter your city" required>
           </div>
 
           <div class="form-group">
             <label for="state">State <span class="required">*</span></label>
-            <input type="text" id="state" name="state" placeholder="Enter your state" required>
+            <input type="text" id="state" name="state" [(ngModel)]="formData.state" placeholder="Enter your state" required>
           </div>
         </div>
 
@@ -67,12 +67,12 @@
         <div class="form-grid">
           <div class="form-group">
             <label for="college">College / University Name <span class="required">*</span></label>
-            <input type="text" id="college" name="college" placeholder="Enter your college name" required>
+            <input type="text" id="college" name="college" [(ngModel)]="formData.college" placeholder="Enter your college name" required>
           </div>
 
           <div class="form-group">
             <label for="degree">Degree / Course <span class="required">*</span></label>
-            <select id="degree" name="degree" required>
+            <select id="degree" name="degree" [(ngModel)]="formData.degree" required>
               <option value="" disabled selected>Select Degree</option>
               <option value="btech">B.Tech / B.E.</option>
               <option value="bca">BCA</option>
@@ -87,12 +87,12 @@
 
           <div class="form-group">
             <label for="branch">Branch / Specialization <span class="required">*</span></label>
-            <input type="text" id="branch" name="branch" placeholder="e.g. Computer Science, IT" required>
+            <input type="text" id="branch" name="branch" [(ngModel)]="formData.branch" placeholder="e.g. Computer Science, IT" required>
           </div>
 
           <div class="form-group">
             <label for="year">Current Year / Semester <span class="required">*</span></label>
-            <select id="year" name="year" required>
+            <select id="year" name="year" [(ngModel)]="formData.year" required>
               <option value="" disabled selected>Select Year</option>
               <option value="1st">1st Year</option>
               <option value="2nd">2nd Year</option>
@@ -104,12 +104,12 @@
 
           <div class="form-group">
             <label for="cgpa">CGPA / Percentage <span class="required">*</span></label>
-            <input type="text" id="cgpa" name="cgpa" placeholder="e.g. 8.5 or 85%" required>
+            <input type="text" id="cgpa" name="cgpa" [(ngModel)]="formData.cgpa" placeholder="e.g. 8.5 or 85%" required>
           </div>
 
           <div class="form-group">
             <label for="passout">Expected Graduation Year <span class="required">*</span></label>
-            <select id="passout" name="passout" required>
+            <select id="passout" name="passout" [(ngModel)]="formData.passout" required>
               <option value="" disabled selected>Select Year</option>
               <option value="2024">2024</option>
               <option value="2025">2025</option>
@@ -125,7 +125,7 @@
         <div class="form-grid">
           <div class="form-group">
             <label for="interest">Interest of Technology <span class="required">*</span></label>
-            <select id="interest" name="interest" required>
+            <select id="interest" name="interest" [(ngModel)]="formData.interest" required>
               <option value="" disabled selected>Select your interest</option>
               <option value="frontend">Frontend Development</option>
               <option value="backend">Backend Development</option>
@@ -141,7 +141,7 @@
 
           <div class="form-group">
             <label for="duration">Preferred Internship Duration <span class="required">*</span></label>
-            <select id="duration" name="duration" required>
+            <select id="duration" name="duration" [(ngModel)]="formData.duration" required>
               <option value="" disabled selected>Select Duration</option>
               <option value="1month">1 Month</option>
               <option value="2months">2 Months</option>
@@ -152,7 +152,7 @@
 
           <div class="form-group">
             <label for="mode">Preferred Mode <span class="required">*</span></label>
-            <select id="mode" name="mode" required>
+            <select id="mode" name="mode" [(ngModel)]="formData.mode" required>
               <option value="" disabled selected>Select Mode</option>
               <option value="remote">Remote / Work from Home</option>
               <option value="onsite">On-site / Office</option>
@@ -162,12 +162,12 @@
 
           <div class="form-group">
             <label for="start_date">Available Start Date <span class="required">*</span></label>
-            <input type="date" id="start_date" name="start_date" required>
+            <input type="date" id="start_date" name="start_date" [(ngModel)]="formData.start_date" required>
           </div>
 
           <div class="form-group full-width">
             <label for="skills">Skills / Technologies You Know <span class="required">*</span></label>
-            <input type="text" id="skills" name="skills" placeholder="e.g. HTML, CSS, JavaScript, React, Node.js, Python" required>
+            <input type="text" id="skills" name="skills" [(ngModel)]="formData.skills" placeholder="e.g. HTML, CSS, JavaScript, React, Node.js, Python" required>
           </div>
         </div>
 
@@ -176,27 +176,27 @@
         <div class="form-grid">
           <div class="form-group full-width">
             <label for="experience">Any Prior Experience</label>
-            <textarea id="experience" name="experience" rows="3" placeholder="Describe any prior internship, project or work experience (if any)"></textarea>
+            <textarea id="experience" name="experience" [(ngModel)]="formData.experience" rows="3" placeholder="Describe any prior internship, project or work experience (if any)"></textarea>
           </div>
 
           <div class="form-group">
             <label for="linkedin">LinkedIn Profile URL</label>
-            <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/yourprofile">
+            <input type="url" id="linkedin" name="linkedin" [(ngModel)]="formData.linkedin" placeholder="https://linkedin.com/in/yourprofile">
           </div>
 
           <div class="form-group">
             <label for="github">GitHub Profile URL</label>
-            <input type="url" id="github" name="github" placeholder="https://github.com/yourusername">
+            <input type="url" id="github" name="github" [(ngModel)]="formData.github" placeholder="https://github.com/yourusername">
           </div>
 
           <div class="form-group">
             <label for="portfolio">Portfolio / Website URL</label>
-            <input type="url" id="portfolio" name="portfolio" placeholder="https://yourportfolio.com">
+            <input type="url" id="portfolio" name="portfolio" [(ngModel)]="formData.portfolio" placeholder="https://yourportfolio.com">
           </div>
 
           <div class="form-group">
             <label for="reference">How did you hear about us? <span class="required">*</span></label>
-            <select id="reference" name="reference" required>
+            <select id="reference" name="reference" [(ngModel)]="formData.reference" required>
               <option value="" disabled selected>Select</option>
               <option value="social_media">Social Media</option>
               <option value="friend">Friend / Referral</option>
@@ -209,7 +209,7 @@
 
           <div class="form-group full-width">
             <label for="message">Why do you want to intern with us?</label>
-            <textarea id="message" name="message" rows="4" placeholder="Tell us about your motivation and what you hope to learn..."></textarea>
+            <textarea id="message" name="message" [(ngModel)]="formData.message" rows="4" placeholder="Tell us about your motivation and what you hope to learn..."></textarea>
           </div>
 
           <div class="form-group full-width">

@@ -1,4 +1,9 @@
 <div class="landing-page">
+  <canvas id="bgCanvas" class="bg-canvas"></canvas>
+  <div class="ai-bg-overlay">
+    <img src="/ai-brain-bg.png" alt="AI Brain Background" class="ai-brain-img">
+  </div>
+
   <!-- Navigation -->
   <nav class="nav">
     <div class="container nav-content">
@@ -7,9 +12,9 @@
       </div>
       <div class="nav-links">
         <a routerLink="/" fragment="features">Features</a>
-        <a routerLink="/" fragment="about">About</a>
-        <a routerLink="/" fragment="contact">Contact</a>
-        <a routerLink="/privacy">Privacy</a>
+        <a routerLink="/about">About</a>
+        <a routerLink="/contact">Contact Us</a>
+        <a routerLink="/batches">Batches</a>
       </div>
       <button class="btn-primary" routerLink="/apply">Get Started</button>
     </div>
@@ -42,16 +47,17 @@
       <div class="link-group">
         <h4>Opportunities</h4>
         <a routerLink="/apply" class="highlight-link">Internships 2024</a>
+        <a routerLink="/batches">Upcoming Batches</a>
         <a href="#">Graduate Programs</a>
         <a href="#">Direct Hiring</a>
         <a href="#">Referral Program</a>
       </div>
       <div class="link-group">
         <h4>Company</h4>
-        <a href="#">About Us</a>
+        <a routerLink="/about">About Us</a>
         <a href="#">Our Culture</a>
         <a href="#">Careers</a>
-        <a href="#">Contact Us</a>
+        <a routerLink="/contact">Contact Us</a>
       </div>
       <div class="footer-cta glass">
         <h4>Let's build together</h4>

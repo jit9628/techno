@@ -1,0 +1,143 @@
+.about-hero {
+  padding: 160px 0 80px;
+  text-align: center;
+  background: radial-gradient(circle at center, rgba(0, 112, 243, 0.05) 0%, transparent 70%);
+}
+
+.about-details {
+  padding: 60px 0 100px;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 6rem;
+}
+
+.detail-card {
+  padding: 3.5rem;
+  border-radius: 32px;
+}
+
+.detail-card h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.detail-card p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.mission-points {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.point {
+  font-weight: 600;
+  color: var(--primary-blue);
+}
+
+.values-section {
+  text-align: center;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  margin-top: 4rem;
+}
+
+.value-item {
+  padding: 3rem 2rem;
+  border-radius: 24px;
+  transition: var(--transition);
+}
+
+.value-item:hover {
+  transform: translateY(-10px);
+  border-color: var(--primary-blue);
+  background: rgba(0, 112, 243, 0.05);
+}
+
+.value-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.leadership-section {
+  margin: 8rem 0;
+  text-align: center;
+}
+
+.founders-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-top: 4rem;
+}
+
+.founder-card {
+  padding: 4rem 3rem;
+  border-radius: 40px;
+  text-align: left;
+  transition: var(--transition);
+}
+
+.founder-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--primary-blue);
+  background: rgba(0, 112, 243, 0.05);
+}
+
+.role {
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.bio {
+  color: var(--text-muted);
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+.value-item h3 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.value-item p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+@media screen and (max-width: 992px) {
+  .details-grid, .founders-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .detail-card {
+    padding: 2rem;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+  }
+}
