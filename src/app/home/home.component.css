@@ -1993,3 +1993,68 @@ html {
     box-shadow: 0 0 25px rgba(168, 85, 247, 0.7);
   }
 }
+
+/* Career Section */
+.career-section {
+  padding: 100px 0;
+  background: #ffffff;
+}
+
+.career-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.career-col {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.career-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease;
+}
+
+.career-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.career-card.large {
+  height: 500px;
+}
+
+.career-card.small {
+  height: 300px;
+}
+
+.career-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 992px) {
+  .career-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .career-col.middle {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .career-grid {
+    grid-template-columns: 1fr;
+  }
+  .career-card.large, .career-card.small {
+    height: 300px;
+  }
+}
