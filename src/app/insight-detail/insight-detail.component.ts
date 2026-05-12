@@ -79,7 +79,7 @@ export class InsightDetailComponent implements OnInit {
     'innovation-future': {
       title: 'The Power of Innovation: Shaping the Future of Global Enterprise',
       subtitle: 'A leadership perspective on how DJT Technology is driving the next wave of digital transformation.',
-      image: '/DIVYANSHI V.jpeg',
+      image: '/ai-brain-bg.png',
       content: `
         <p>Innovation is the heartbeat of DJT Technology. Led by our Founder & CEO, Divyanshi, we are on a mission to redefine how global enterprises interact with technology.</p>
         

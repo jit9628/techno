@@ -24,7 +24,24 @@ export class HomeComponent implements OnInit {
   };
   isSubmittingQuote = false;
 
+  contactForm = {
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  };
+
   constructor(private route: ActivatedRoute, private http: HttpClient) {}
+
+  onContactWhatsApp() {
+    if (!this.contactForm.name || !this.contactForm.message) {
+      Swal.fire('Error', 'Please enter your name and message.', 'error');
+      return;
+    }
+    const text = `*New Contact Message*%0A*Name:* ${this.contactForm.name}%0A*Email:* ${this.contactForm.email}%0A*Subject:* ${this.contactForm.subject}%0A*Message:* ${this.contactForm.message}`;
+    const whatsappUrl = `https://wa.me/918009799550?text=${text}`;
+    window.open(whatsappUrl, '_blank');
+  }
 
   ngOnInit() {
     this.route.fragment.subscribe(frag => {
