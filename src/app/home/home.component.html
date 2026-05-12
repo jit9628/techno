@@ -47,6 +47,13 @@
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         </button>
       </div>
+      <div class="search-suggestions">
+        <span>Trending:</span>
+        <button class="suggestion-tag">Startup MVP Cost?</button>
+        <button class="suggestion-tag">Scaling with AWS</button>
+        <button class="suggestion-tag">GenAI for Fintech</button>
+        <button class="suggestion-tag">UI/UX Trends 2025</button>
+      </div>
     </div>
   </div>
 </section>
@@ -87,7 +94,6 @@
               <li><span>✓</span> <strong>Expertise Level:</strong> High-level expert team with years of industry experience.</li>
             </ul>
           </div>
-
         </div>
       </div>
 
@@ -96,7 +102,6 @@
         <div class="pane-grid">
           <div class="pane-text">
             <h2>Our Core Services</h2>
-
             <div class="services-mini-grid">
               <div class="service-mini-card">
                 <h3>Software Dev</h3>
@@ -144,7 +149,6 @@
               </div>
             </div>
           </div>
-
         </div>
       </div>
 
@@ -175,7 +179,6 @@
               <div class="tech-tag">Kubernetes</div>
             </div>
           </div>
-
         </div>
       </div>
     </div>
@@ -222,7 +225,6 @@
 </section>
 
 <!-- Big Thinkers Section -->
-<!-- Big Thinkers Section -->
 <section class="big-thinkers">
   <div class="container thinkers-container">
     <div class="thinker-content">
@@ -246,8 +248,8 @@
     </div>
   </div>
 </section>
+
 <section id="insights" class="success-stories">
-  <!-- ... existing content ... -->
   <div class="container">
     <div class="stories-header">
       <h2 class="section-title">Startup Success Stories</h2>
@@ -355,22 +357,10 @@
       </div>
     </div>
     
-    <div class="ready-stats">
-      <div class="stat-item">
-        <div class="stat-number">150+</div>
-        <div class="stat-label">Success <br> Stories</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">25+</div>
-        <div class="stat-label">Global <br> Partners</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">10+</div>
-        <div class="stat-label">Cutting-edge <br> Technologies</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">24/7</div>
-        <div class="stat-label">Dedicated <br> Support</div>
+    <div class="ready-stats" #statsSection>
+      <div class="stat-item" *ngFor="let stat of stats">
+        <div class="stat-number">{{ stat.current }}{{ stat.suffix }}</div>
+        <div class="stat-label" [innerHTML]="stat.label"></div>
       </div>
     </div>
   </div>
@@ -379,25 +369,26 @@
 <!-- Career Section -->
 <section class="career-section">
   <div class="container">
-    <div class="career-header">
-      <h2 class="career-title">Supercharge Your Career with Us</h2>
-      <p class="career-desc">At DJT Technology, we leverage technology to shape the future of business. <br> Join us if you want to grow, innovate and make an impact.</p>
+    <div class="section-header">
+      <h2 class="section-title">Join a Community of Innovators</h2>
+      <p class="section-subtitle">We are looking for passionate problem solvers and creative thinkers to help us build the future.</p>
+      <button class="btn-primary" routerLink="/batches">VIEW OPPORTUNITIES</button>
     </div>
-    <div class="career-gallery">
+    <div class="career-grid">
       <div class="career-col side">
         <div class="career-card large">
           <img src="/career-1.png" alt="Diverse Professional 1">
         </div>
       </div>
-      <div class="career-col center">
+      <div class="career-col middle">
         <div class="career-card small">
           <img src="/career-2.png" alt="Diverse Professional 2">
         </div>
+      </div>
+      <div class="career-col side">
         <div class="career-card small">
           <img src="/career-3.png" alt="Diverse Professional 3">
         </div>
-      </div>
-      <div class="career-col side">
         <div class="career-card large">
           <img src="/career-4.png" alt="Diverse Professional 4">
         </div>
@@ -405,12 +396,6 @@
     </div>
   </div>
 </section>
-
-
-
-
-
-
 
 <!-- FAQ Section -->
 <section id="faq" class="faq-section">

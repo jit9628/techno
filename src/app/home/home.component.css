@@ -1951,3 +1951,45 @@ html {
 
 
 .thinker-description { font-size: 1rem; line-height: 1.6; opacity: 0.8; margin-bottom: 1.5rem; max-width: 550px; }
+
+.search-suggestions {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+}
+
+.suggestion-tag {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.suggestion-tag:hover {
+  background: rgba(168, 85, 247, 0.2);
+  border-color: #a855f7;
+  transform: translateY(-2px);
+}
+
+.ai-orb {
+  animation: pulseOrb 3s infinite ease-in-out;
+}
+
+@keyframes pulseOrb {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(168, 85, 247, 0.4);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(168, 85, 247, 0.7);
+  }
+}

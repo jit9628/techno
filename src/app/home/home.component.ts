@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
@@ -12,9 +12,19 @@ import Swal from 'sweetalert2';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, AfterViewInit {
   activeTab: string = 'why-us';
   activeFaq: number | null = null;
+  
+  @ViewChild('statsSection') statsSection!: ElementRef;
+
+  stats = [
+    { label: 'Success <br> Stories', target: 150, current: 0, suffix: '+' },
+    { label: 'Global <br> Partners', target: 25, current: 0, suffix: '+' },
+    { label: 'Cutting-edge <br> Technologies', target: 10, current: 0, suffix: '+' },
+    { label: 'Dedicated <br> Support', target: 24, current: 0, suffix: '/7' }
+  ];
+  countersStarted = false;
   
   quoteForm = {
     name: '',
@@ -33,6 +43,46 @@ export class HomeComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private http: HttpClient) {}
 
+  ngOnInit() {
+    this.route.fragment.subscribe(frag => {
+      if (frag === 'services' || frag === 'why-us' || frag === 'tech') {
+        this.activeTab = frag;
+      }
+    });
+  }
+
+  ngAfterViewInit() {
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting && !this.countersStarted) {
+        this.startCounters();
+        this.countersStarted = true;
+      }
+    }, { threshold: 0.5 });
+
+    if (this.statsSection) {
+      observer.observe(this.statsSection.nativeElement);
+    }
+  }
+
+  startCounters() {
+    const duration = 2000;
+    const frameRate = 1000 / 60;
+    const totalFrames = Math.round(duration / frameRate);
+
+    this.stats.forEach(stat => {
+      let frame = 0;
+      const interval = setInterval(() => {
+        frame++;
+        const progress = frame / totalFrames;
+        stat.current = Math.round(stat.target * progress);
+        if (frame === totalFrames) {
+          stat.current = stat.target;
+          clearInterval(interval);
+        }
+      }, frameRate);
+    });
+  }
+
   onContactWhatsApp() {
     if (!this.contactForm.name || !this.contactForm.message) {
       Swal.fire('Error', 'Please enter your name and message.', 'error');
@@ -41,14 +91,6 @@ export class HomeComponent implements OnInit {
     const text = `*New Contact Message*%0A*Name:* ${this.contactForm.name}%0A*Email:* ${this.contactForm.email}%0A*Subject:* ${this.contactForm.subject}%0A*Message:* ${this.contactForm.message}`;
     const whatsappUrl = `https://wa.me/918009799550?text=${text}`;
     window.open(whatsappUrl, '_blank');
-  }
-
-  ngOnInit() {
-    this.route.fragment.subscribe(frag => {
-      if (frag === 'services' || frag === 'why-us' || frag === 'tech') {
-        this.activeTab = frag;
-      }
-    });
   }
 
   setTab(tab: string) {
