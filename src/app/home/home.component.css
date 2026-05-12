@@ -2058,3 +2058,70 @@ html {
     height: 300px;
   }
 }
+
+/* Updated Career Grid for 5 images (2-1-2) */
+.career-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.career-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.career-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.career-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.career-card.large {
+  height: 450px;
+}
+
+.career-card.small {
+  height: 220px;
+}
+
+.career-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 992px) {
+  .career-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .career-col.middle {
+    grid-column: span 2;
+    order: -1;
+  }
+  .career-card.large {
+    height: 350px;
+  }
+}
+
+@media (max-width: 600px) {
+  .career-grid {
+    grid-template-columns: 1fr;
+  }
+  .career-col.middle {
+    grid-column: span 1;
+  }
+  .career-card.large, .career-card.small {
+    height: 250px;
+  }
+}
