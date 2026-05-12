@@ -3,8 +3,8 @@
   <div class="banner-grid">
     <div class="banner-left">
       <div class="banner-left-content">
-        <h2 class="banner-title">Innovate. Scale. Succeed. Your Global Technology Partner.</h2>
-        <p class="banner-subtitle">We bridge the gap between visionary ideas and industry-leading implementation with AI-powered solutions and elite engineering.</p>
+        <h2 class="banner-title">Build Your Dream Product. Scale with Speed.</h2>
+        <p class="banner-subtitle">We help early-stage startups and visionary founders turn bold ideas into market-ready products with agile engineering and AI-driven innovation.</p>
         <button class="btn-read-more">EXPLORE INNOVATION</button>
       </div>
     </div>
@@ -13,7 +13,7 @@
         
         <div class="quote-container">
           <p class="quote-text">
-            DJT Technology's mission is to empower businesses through cutting-edge innovation and strategic digital transformation. We are committed to delivering next-generation solutions that drive efficiency, catalyze growth, and redefine the standards of excellence in the tech industry. Our focus remains on building sustainable partnerships and leveraging advanced AI-powered capabilities to solve complex challenges for our global clients.
+            At DJT Technology, we breathe innovation. As a fast-growing tech startup, our mission is to empower other founders by building next-generation digital products. We don't just write code; we partner with you to disrupt markets, catalyze growth, and set new benchmarks for what's possible in the digital landscape. We leverage agile AI-powered capabilities to solve complex challenges at startup speed.
           </p>
           
           <div class="author-box">
@@ -107,6 +107,18 @@
                 <p>Integrating intelligence into your workflows.</p>
               </div>
               <div class="service-mini-card">
+                <h3>AI Video Editing</h3>
+                <p>Smart video production with AI-powered transitions and effects.</p>
+              </div>
+              <div class="service-mini-card">
+                <h3>Image Editing</h3>
+                <p>High-end retouching and AI-assisted creative manipulation.</p>
+              </div>
+              <div class="service-mini-card">
+                <h3>Digital Promotions</h3>
+                <p>Strategic brand boosting and social media viral campaigns.</p>
+              </div>
+              <div class="service-mini-card">
                 <h3>Graphic Design</h3>
                 <p>Creative branding, logos, and visual identity.</p>
               </div>
@@ -146,11 +158,21 @@
               <div class="tech-tag">Java</div>
               <div class="tech-tag">Spring Boot</div>
               <div class="tech-tag">Angular</div>
+              <div class="tech-tag">React.js</div>
+              <div class="tech-tag">Next.js</div>
+              <div class="tech-tag">Node.js</div>
+              <div class="tech-tag">Python</div>
+              <div class="tech-tag">FastAPI</div>
+              <div class="tech-tag">AI / GenAI</div>
               <div class="tech-tag">Flutter</div>
+              <div class="tech-tag">React Native</div>
               <div class="tech-tag">AWS</div>
               <div class="tech-tag">Azure</div>
+              <div class="tech-tag">Firebase</div>
               <div class="tech-tag">PostgreSQL</div>
+              <div class="tech-tag">MongoDB</div>
               <div class="tech-tag">Docker</div>
+              <div class="tech-tag">Kubernetes</div>
             </div>
           </div>
 
@@ -183,13 +205,15 @@
       <div class="vm-form-column">
         <div class="quote-form-card">
           <h4>GET A FREE QUOTE</h4>
-          <form class="quote-mini-form">
-            <input type="text" placeholder="Name" required>
-            <input type="email" placeholder="Email" required>
-            <input type="tel" placeholder="Phone No" required>
-            <textarea placeholder="Description" rows="4"></textarea>
+          <form class="quote-mini-form" (ngSubmit)="onSubmitQuote()">
+            <input type="text" [(ngModel)]="quoteForm.name" name="name" placeholder="Name" required>
+            <input type="email" [(ngModel)]="quoteForm.email" name="email" placeholder="Email" required>
+            <input type="tel" [(ngModel)]="quoteForm.phone" name="phone" placeholder="Phone No" required>
+            <textarea [(ngModel)]="quoteForm.description" name="description" placeholder="Description" rows="4"></textarea>
 
-            <button type="submit" class="btn-quote-submit">GET MY QUOTE</button>
+            <button type="submit" class="btn-quote-submit" [disabled]="isSubmittingQuote">
+              {{ isSubmittingQuote ? 'SENDING...' : 'GET MY QUOTE' }}
+            </button>
           </form>
         </div>
       </div>
@@ -212,7 +236,7 @@
           <span>Founder & CEO, <br> DJT Technology</span>
         </div>
       </div>
-      <button class="thinker-btn">READ THE CASE STUDY</button>
+      <button class="thinker-btn" routerLink="/insight/innovation-future">READ THE CASE STUDY</button>
     </div>
     <div class="thinker-visual">
       <img src="/DIVYANSHI V.jpeg" alt="Divyanshi Shukla">
@@ -226,8 +250,8 @@
   <!-- ... existing content ... -->
   <div class="container">
     <div class="stories-header">
-      <h2 class="section-title">Success Stories</h2>
-      <p class="section-subtitle">How DJT Technology empowers businesses through cutting-edge digital transformation.</p>
+      <h2 class="section-title">Startup Success Stories</h2>
+      <p class="section-subtitle">How we've helped founders and emerging teams disrupt industries through technology.</p>
     </div>
     <div class="stories-grid">
       <div class="story-card">
@@ -235,9 +259,9 @@
           <img src="/ai-business.png" alt="AI-Powered Solutions" class="story-img">
         </div>
         <div class="story-info">
-          <h3>Transforming Businesses with AI-Powered Solutions</h3>
-          <p>How DJT Technology helped global enterprises achieve seamless digital transformation.</p>
-          <button class="btn-read-story">DEEP DIVE</button>
+          <h3>From MVP to Scale: AI-Powered Disruption</h3>
+          <p>How we helped a fintech startup achieve 10x growth through seamless digital transformation.</p>
+          <button class="btn-read-story" routerLink="/insight/mvp-to-scale">DEEP DIVE</button>
         </div>
       </div>
       <div class="story-card">
@@ -247,7 +271,7 @@
         <div class="story-info">
           <h3>Accelerating AI-Powered Innovation for Global Clients</h3>
           <p>Delivering next-gen AI solutions that drive efficiency and catalyze growth worldwide.</p>
-          <button class="btn-read-story">DEEP DIVE</button>
+          <button class="btn-read-story" routerLink="/insight/ai-innovation">DEEP DIVE</button>
         </div>
       </div>
       <div class="story-card">
@@ -257,7 +281,7 @@
         <div class="story-info">
           <h3>DJT Technology Vision 2025: Redefining Excellence</h3>
           <p>Key highlights from our strategic engagements with industry leaders across sectors.</p>
-          <button class="btn-read-story">DEEP DIVE</button>
+          <button class="btn-read-story" routerLink="/insight/vision-2025">DEEP DIVE</button>
         </div>
       </div>
     </div>
@@ -269,8 +293,8 @@
   <div class="container">
     <div class="growth-grid">
       <div class="growth-left">
-        <h2 class="growth-title">Driving Your Growth: Technology is Our Engine, Innovation Our Fuel</h2>
-        <p class="growth-desc">Whether you're building smarter products, scaling with cloud, reimagining the customer experience or unlocking AI-led efficiencies, our solutions are built to meet you where you are and take you further, faster.</p>
+        <h2 class="growth-title">Scaling Your Vision: Innovation at Startup Speed</h2>
+        <p class="growth-desc">From MVP development to scaling with cloud, we provide the tech engine you need to move faster and stay ahead of the competition.</p>
       </div>
       <div class="growth-right">
         <div class="growth-card">

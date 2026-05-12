@@ -26,12 +26,12 @@ export class BatchesComponent implements OnInit {
   ];
 
   jobs = [
-    { title: 'Frontend Developer', exp: '1-3 Years', salary: 'Competitive', loc: 'Remote / Noida', type: 'Full-time' },
+    { title: 'Frontend Developer', exp: '1-3 Years', salary: 'Competitive', loc: 'Remote', type: 'Full-time' },
     { title: 'Backend Developer', exp: '2-4 Years', salary: 'Competitive', loc: 'Remote', type: 'Full-time' },
-    { title: 'Full Stack Developer', exp: 'Fresher / Exp', salary: 'Competitive', loc: 'Hybrid', type: 'Full-time' },
+    { title: 'Full Stack Developer', exp: 'Fresher / Exp', salary: 'Competitive', loc: 'Remote', type: 'Full-time' },
     { title: 'UI/UX Designer', exp: '1-2 Years', salary: 'Market Standard', loc: 'Remote', type: 'Full-time' },
     { title: 'Data Analyst', exp: '0-2 Years', salary: 'Competitive', loc: 'Remote', type: 'Internship' },
-    { title: 'AI Engineer', exp: '2+ Years', salary: 'Top Tier', loc: 'Noida', type: 'Full-time' },
+    { title: 'AI Engineer', exp: '2+ Years', salary: 'Top Tier', loc: 'Remote', type: 'Full-time' },
     { title: 'Digital Marketer', exp: '1-3 Years', salary: 'Competitive', loc: 'Remote', type: 'Full-time' }
   ];
 
@@ -60,6 +60,7 @@ export class BatchesComponent implements OnInit {
   };
 
   isSubmitting = false;
+  apiSubmitUrl = 'https://www.divijixtechnology.com/api/apply';
 
   constructor(private http: HttpClient) {}
 
@@ -81,13 +82,44 @@ export class BatchesComponent implements OnInit {
   }
 
   submitApplication() {
+    if (!this.applicationForm.name || !this.applicationForm.email || !this.applicationForm.phone) {
+      Swal.fire('Error', 'Please fill in all required fields.', 'error');
+      return;
+    }
+
     this.isSubmitting = true;
-    // Simulate API call
-    setTimeout(() => {
-      this.isSubmitting = false;
-      Swal.fire('Success!', 'Your application has been submitted.', 'success');
-      this.applicationForm = { name: '', email: '', phone: '', resume: null, portfolio: '', experience: '' };
-    }, 2000);
+    
+    // Using FormData for file upload support if needed in future
+    const formData = new FormData();
+    formData.append('name', this.applicationForm.name);
+    formData.append('email', this.applicationForm.email);
+    formData.append('phone', this.applicationForm.phone);
+    formData.append('experience', this.applicationForm.experience);
+    formData.append('portfolio', this.applicationForm.portfolio);
+    if (this.applicationForm.resume) {
+      formData.append('resume', this.applicationForm.resume);
+    }
+
+    this.http.post(this.apiSubmitUrl, this.applicationForm).subscribe({
+      next: (res: any) => {
+        this.isSubmitting = false;
+        Swal.fire({
+          title: 'Success!',
+          text: 'Your application has been submitted successfully.',
+          icon: 'success',
+          confirmButtonColor: '#004a99'
+        });
+        this.applicationForm = { name: '', email: '', phone: '', resume: null, portfolio: '', experience: '' };
+      },
+      error: (err) => {
+        this.isSubmitting = false;
+        Swal.fire({
+          title: 'Error!',
+          text: 'Submission failed. Please check your connection and try again.',
+          icon: 'error'
+        });
+      }
+    });
   }
 
   scrollToSection(id: string) {

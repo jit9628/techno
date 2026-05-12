@@ -9,11 +9,13 @@ import { BatchesComponent } from './batches/batches.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { IndustriesComponent } from './industries/industries.component';
+import { InsightDetailComponent } from './insight-detail/insight-detail.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'apply', component: InternshipFormComponent },
     { path: 'industries', component: IndustriesComponent },
+    { path: 'insight/:id', component: InsightDetailComponent },
     { path: 'privacy', component: PrivacyComponent },
     { path: 'disclaimer', component: DisclaimerComponent },
     { path: 'terms', component: TermsComponent },

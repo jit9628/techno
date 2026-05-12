@@ -1,0 +1,43 @@
+<div class="insight-detail-page animate-in">
+  <div class="hero-banner" [style.backgroundImage]="'url(' + insightData?.image + ')'">
+    <div class="overlay"></div>
+    <div class="container hero-content">
+      <button class="back-btn" routerLink="/">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        BACK TO HOME
+      </button>
+      <h1 class="title">{{ insightData?.title }}</h1>
+      <p class="subtitle">{{ insightData?.subtitle }}</p>
+    </div>
+  </div>
+
+  <div class="content-section">
+    <div class="container">
+      <div class="content-grid">
+        <div class="main-content glass" [innerHTML]="insightData?.content"></div>
+        
+        <div class="sidebar">
+          <div class="cta-card glass">
+            <h3>Ready to innovate?</h3>
+            <p>Let's discuss how we can apply these insights to your specific business challenges.</p>
+            <button class="btn-primary" routerLink="/contact">GET IN TOUCH</button>
+          </div>
+          
+          <div class="related-insights">
+            <h4>Explore More</h4>
+            <div class="related-item glass" *ngFor="let key of ['mvp-to-scale', 'ai-innovation', 'vision-2025']">
+              <a *ngIf="key !== insightId" [routerLink]="['/insight', key]">
+                {{ insights[key].title }}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!insightData" class="not-found container">
+  <h2>Insight not found</h2>
+  <button class="btn-primary" routerLink="/">Return Home</button>
+</div>
