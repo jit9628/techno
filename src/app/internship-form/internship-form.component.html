@@ -227,7 +227,9 @@
         </div>
         
         <div class="form-actions">
-          <button type="submit" class="btn-primary large-btn">Submit Application</button>
+          <button type="submit" class="btn-primary large-btn" [disabled]="isSubmitting">
+            {{ isSubmitting ? 'Submitting...' : 'Submit Application' }}
+          </button>
         </div>
       </form>
     </div>

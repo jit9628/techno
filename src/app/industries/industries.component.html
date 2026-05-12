@@ -1,0 +1,31 @@
+<section class="industries-hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1 class="hero-title">Industries We <span class="blue-text">Transform</span></h1>
+      <p class="hero-subtitle">We bring specialized expertise to various sectors, helping businesses thrive in a digital-first world.</p>
+    </div>
+  </div>
+</section>
+
+<section class="industries-grid-section">
+  <div class="container">
+    <div class="industries-grid">
+      <div class="industry-card glass" *ngFor="let item of industries">
+        <div class="industry-icon">{{ item.icon }}</div>
+        <h3 class="industry-title">{{ item.title }}</h3>
+        <p class="industry-desc">{{ item.desc }}</p>
+        <button class="btn-outline">Explore Solutions</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="industry-cta">
+  <div class="container">
+    <div class="cta-box glass">
+      <h2>Don't see your industry?</h2>
+      <p>We work across many more sectors. Let's discuss how we can help your specific business needs.</p>
+      <button class="btn-primary" routerLink="/contact">Get in Touch</button>
+    </div>
+  </div>
+</section>

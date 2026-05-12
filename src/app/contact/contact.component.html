@@ -62,9 +62,74 @@
             <label>Message</label>
             <textarea placeholder="Your Message" class="form-control" rows="5" [(ngModel)]="contactForm.message" name="message"></textarea>
           </div>
-          <button type="submit" class="btn-primary w-100">Send Message</button>
+          <button type="submit" class="btn-primary w-100" [disabled]="isSubmitting">
+            {{ isSubmitting ? 'Sending...' : 'Send Message' }}
+          </button>
         </form>
       </div>
     </div>
   </div>
 </section>
+ 
+ <section class="inquiry-section">
+   <div class="container">
+     <div class="inquiry-list">
+       <div class="inquiry-item" *ngFor="let category of inquiryCategories; let i = index" [class.active]="category.open" (click)="toggleInquiry(i)">
+         <div class="inquiry-header">
+           <span class="inquiry-title">{{ category.title }}</span>
+           <span class="inquiry-icon">{{ category.open ? '−' : '+' }}</span>
+         </div>
+         <div class="inquiry-content" *ngIf="category.open">
+           <p class="inquiry-subtitle" *ngIf="category.subtitle">{{ category.subtitle }}</p>
+           
+           <p *ngIf="category.content">{{ category.content }}</p>
+
+           <!-- Buttons List -->
+           <div class="inquiry-buttons" *ngIf="category.buttons">
+             <ng-container *ngFor="let btn of category.buttons">
+               <button *ngIf="btn.action === 'scroll'" [class]="btn.class" (click)="scrollToForm()">{{ btn.text }}</button>
+               <button *ngIf="btn.link" [class]="btn.class" [routerLink]="btn.link">{{ btn.text }}</button>
+             </ng-container>
+           </div>
+
+           <!-- Multi-Sections (Ex-Employee) -->
+           <div class="inquiry-subsections" *ngIf="category.sections">
+             <div class="inquiry-subsection" *ngFor="let section of category.sections">
+               <h4>{{ section.title }}</h4>
+               <p>{{ section.text }}</p>
+               <button [class]="section.button.class" (click)="scrollToForm()">{{ section.button.text }}</button>
+             </div>
+           </div>
+
+           <!-- Investor Contacts -->
+           <div class="investor-contacts" *ngIf="category.investorContacts">
+             <div class="investor-contact" *ngFor="let contact of category.investorContacts">
+               <label>{{ contact.label }}</label>
+               <strong>{{ contact.name }}</strong>
+               <p *ngIf="contact.tel">Tel No.: <a [href]="'tel:' + contact.tel">{{ contact.tel }}</a></p>
+               <p *ngIf="contact.email"><a [href]="'mailto:' + contact.email">{{ contact.email }}</a></p>
+             </div>
+             <button *ngIf="category.bottomButton" [class]="category.bottomButton.class" (click)="scrollToForm()">{{ category.bottomButton.text }}</button>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </section>
+ 
+ <section class="faq-section">
+   <div class="container">
+     <h2 class="section-title">Frequently Asked <span class="blue-text">Questions</span></h2>
+     <div class="faq-grid">
+       <div class="faq-item glass" *ngFor="let faq of faqs; let i = index" [class.active]="faq.open" (click)="toggleFaq(i)">
+         <div class="faq-question">
+           <h3>{{ faq.question }}</h3>
+           <span class="faq-toggle">{{ faq.open ? '−' : '+' }}</span>
+         </div>
+         <div class="faq-answer" *ngIf="faq.open">
+           <p>{{ faq.answer }}</p>
+         </div>
+       </div>
+     </div>
+   </div>
+ </section>

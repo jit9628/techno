@@ -1,101 +1,305 @@
-.batches-section {
-  padding: 160px 0 100px;
-  min-height: 100vh;
-  background: radial-gradient(circle at top right, rgba(0, 112, 243, 0.05), transparent 40%);
+/* Hero Section */
+.career-hero {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding-top: 80px;
 }
 
-.batches-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2.5rem;
-  margin-top: 3rem;
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.batch-card {
-  position: relative;
-  padding: 3rem 2rem;
-  border-radius: 32px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
-  border: 1px solid var(--glass-border);
-  backdrop-filter: blur(20px);
-  transition: var(--transition);
-}
-
-.batch-card:hover {
-  transform: translateY(-10px);
-  border-color: var(--primary-blue);
-  box-shadow: 0 15px 40px rgba(0, 112, 243, 0.1);
-}
-
-.batch-status {
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  padding: 0.4rem 1rem;
-  border-radius: 50px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--glass-border);
-  color: var(--primary-blue);
-}
-
-.batch-status.filling-fast {
-  background: rgba(255, 68, 68, 0.1);
-  color: #ff4444;
-  border-color: rgba(255, 68, 68, 0.2);
-}
-
-.batch-content h3 {
-  font-size: 1.5rem;
+.hero-title {
+  font-size: 4rem;
+  font-weight: 800;
   margin-bottom: 1.5rem;
-  color: var(--text-main);
+  line-height: 1.1;
 }
 
-.batch-details {
+.hero-subtitle {
+  font-size: 1.4rem;
+  margin-bottom: 2.5rem;
+  opacity: 0.9;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background: white;
+  color: #000;
+}
+
+/* Sections General */
+section {
+  padding: 100px 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+}
+
+/* Why Join Us */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.benefit-card {
+  padding: 3rem 2rem;
+  border-radius: 24px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-10px);
+}
+
+.benefit-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.benefit-card h3 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+/* Culture Section */
+.culture-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.culture-points {
+  list-style: none;
+  margin-top: 2rem;
+}
+
+.culture-points li {
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-left: 2rem;
+}
+
+.culture-points li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--primary-blue);
+  font-weight: bold;
+}
+
+.culture-image img {
+  width: 100%;
+  border-radius: 32px;
+}
+
+/* Open Positions */
+.jobs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.job-card {
+  padding: 2.5rem;
+  border-radius: 24px;
+  position: relative;
+}
+
+.job-type {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background: rgba(0, 112, 243, 0.1);
+  color: var(--primary-blue);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.job-card h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  margin-top: 1rem;
+}
+
+.job-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+  color: var(--text-muted);
+}
+
+/* Testimonials */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.testimonial-card {
+  padding: 2.5rem;
+  border-radius: 24px;
+}
+
+.testimonial-text {
+  font-style: italic;
+  margin-bottom: 2rem;
+  line-height: 1.8;
+}
+
+.testimonial-user {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.testimonial-user img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.user-info h4 {
+  margin: 0;
+}
+
+.user-info p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Recruitment Process */
+.process-timeline {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.process-step {
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+
+.step-number {
+  width: 50px;
+  height: 50px;
+  background: var(--primary-blue);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  margin: 0 auto 1.5rem;
+  font-size: 1.2rem;
+  box-shadow: 0 0 20px rgba(0, 112, 243, 0.3);
+}
+
+/* Internship Banner */
+.internship-banner {
+  padding: 5rem;
+  border-radius: 40px;
+  text-align: center;
+}
+
+.banner-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.banner-content p {
+  max-width: 700px;
+  margin: 0 auto 2.5rem;
+}
+
+/* Application Form */
+.form-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4rem;
+  border-radius: 32px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
   margin-bottom: 2rem;
 }
 
-.batch-details p {
-  color: var(--text-muted);
-  font-size: 0.95rem;
-  margin-bottom: 1rem;
+.form-group {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   gap: 0.8rem;
 }
 
-.batch-details svg {
-  color: var(--primary-blue);
-  opacity: 0.8;
+.form-group label {
+  font-weight: 600;
 }
 
-.batch-details strong {
+.form-group input {
+  padding: 1rem;
+  border-radius: 12px;
+  border: 1px solid var(--glass-border);
+  background: rgba(255, 255, 255, 0.05);
   color: var(--text-main);
-  min-width: 80px;
 }
 
-@media screen and (max-width: 1024px) {
-  .batches-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.w-100 {
+  width: 100%;
 }
 
-@media screen and (max-width: 768px) {
-  .batches-section {
-    padding: 100px 0 60px;
-  }
-  
-  .batches-grid {
-    grid-template-columns: 1fr;
-    padding: 1rem;
-  }
+@media (max-width: 992px) {
+  .hero-title { font-size: 3rem; }
+  .culture-grid { grid-template-columns: 1fr; }
+  .process-timeline { flex-direction: column; }
+}
 
-  .batch-card {
-    padding: 2.5rem 1.5rem;
-  }
-
-  .section-title {
-    font-size: 2.2rem;
-  }
+@media (max-width: 768px) {
+  .form-grid { grid-template-columns: 1fr; }
+  .hero-actions { flex-direction: column; }
+  .internship-banner { padding: 3rem 2rem; }
 }

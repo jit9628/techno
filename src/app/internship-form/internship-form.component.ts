@@ -41,12 +41,33 @@ export class InternshipFormComponent {
     reference: '',
     message: ''
   };
+  isSubmitting = false;
 
   constructor(private http: HttpClient) {}
 
+  validateForm() {
+    const requiredFields = ['fullname', 'email', 'mobile', 'college', 'degree', 'branch'];
+    for (const field of requiredFields) {
+      if (!this.formData[field as keyof typeof this.formData]) {
+        Swal.fire('Error', `Please fill in your ${field}.`, 'error');
+        return false;
+      }
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(this.formData.email)) {
+      Swal.fire('Error', 'Please enter a valid email address.', 'error');
+      return false;
+    }
+    return true;
+  }
+
   onSubmit() {
+    if (!this.validateForm()) return;
+
+    this.isSubmitting = true;
     this.http.post('http://localhost:3000/api/internship', this.formData).subscribe({
       next: (res: any) => {
+        this.isSubmitting = false;
         Swal.fire({
           title: 'Success!',
           text: 'Your application has been submitted successfully.',
@@ -56,6 +77,7 @@ export class InternshipFormComponent {
         this.resetForm();
       },
       error: (err) => {
+        this.isSubmitting = false;
         Swal.fire({
           title: 'Error!',
           text: 'Submission failed. Please check your connection.',

@@ -4,6 +4,20 @@
   background: radial-gradient(circle at center, rgba(0, 112, 243, 0.05) 0%, transparent 70%);
 }
 
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--text-main);
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: #444444;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
 .contact-details {
   padding: 60px 0 100px;
 }
@@ -45,7 +59,7 @@
 }
 
 .info-text p {
-  color: var(--text-muted);
+  color: #444444; /* Darker than var(--text-muted) for better contrast */
   line-height: 1.6;
 }
 
@@ -62,17 +76,22 @@
   display: block;
   margin-bottom: 0.8rem;
   color: var(--text-main);
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .form-control {
   width: 100%;
   padding: 1rem 1.5rem;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid var(--glass-border);
-  color: white;
+  background: rgba(0, 0, 0, 0.03); /* Subtle dark background instead of light */
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: var(--text-main);
   transition: var(--transition);
+}
+
+.form-control::placeholder {
+  color: #888888;
+  opacity: 1;
 }
 
 .form-control:focus {
@@ -105,5 +124,229 @@ textarea.form-control {
   .info-card {
     padding: 1.5rem;
     gap: 1.5rem;
+  }
+}
+
+/* FAQ Section */
+.faq-section {
+  padding: 80px 0 120px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 4rem;
+}
+
+.faq-grid {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.faq-item {
+  padding: 1.5rem 2rem;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.faq-item:hover {
+  background: rgba(0, 112, 243, 0.05);
+  transform: translateY(-2px);
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-question h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.faq-toggle {
+  font-size: 1.5rem;
+  color: var(--primary-blue);
+  font-weight: bold;
+}
+
+.faq-answer {
+  margin-top: 1.2rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--glass-border);
+  animation: fadeIn 0.3s ease;
+}
+
+.faq-answer p {
+  color: #444444;
+  line-height: 1.6;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Inquiry Section */
+.inquiry-section {
+  padding: 40px 0 80px;
+  background-color: #f5f3ef; /* Light beige/stone background to match image */
+}
+
+.inquiry-list {
+  max-width: 1000px;
+  margin: 0 auto;
+  border-top: 1px solid #c9c3b8;
+}
+
+.inquiry-item {
+  border-bottom: 1px solid #c9c3b8;
+  padding: 1.8rem 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.inquiry-item:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.inquiry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.inquiry-title {
+  font-size: 1.8rem; /* Large minimalist text */
+  font-weight: 500;
+  color: #1a1a1a;
+  letter-spacing: -0.5px;
+}
+
+.inquiry-icon {
+  font-size: 2rem;
+  color: #888888;
+  font-weight: 300;
+}
+
+.inquiry-content {
+  margin-top: 1.5rem;
+  padding-bottom: 0.5rem;
+  max-width: 800px;
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.inquiry-content p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #444444;
+}
+
+.inquiry-subtitle {
+  font-size: 1rem !important;
+  color: #1a1a1a !important;
+  margin-bottom: 2rem;
+  max-width: 900px;
+}
+
+.inquiry-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.btn-red, .btn-maroon {
+  padding: 0.8rem 2rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  border-radius: 4px;
+  color: white;
+  transition: all 0.3s ease;
+  min-width: 200px;
+}
+
+.btn-red {
+  background-color: #e31b23;
+}
+
+.btn-red:hover {
+  background-color: #c41219;
+  transform: translateY(-2px);
+}
+
+.btn-maroon {
+  background-color: #4a041c;
+}
+
+.btn-maroon:hover {
+  background-color: #3a0316;
+  transform: translateY(-2px);
+}
+
+/* Subsections (Ex-Employee) */
+.inquiry-subsections {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.inquiry-subsection h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  color: #1a1a1a;
+}
+
+.inquiry-subsection p {
+  font-size: 1rem !important;
+  margin-bottom: 1.2rem;
+}
+
+/* Investor Contacts */
+.investor-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.investor-contact label {
+  display: block;
+  font-size: 0.9rem;
+  color: #b33939; /* Reddish label */
+  margin-bottom: 0.5rem;
+}
+
+.investor-contact strong {
+  display: block;
+  font-size: 1.1rem;
+  color: #1a1a1a;
+  margin-bottom: 0.4rem;
+}
+
+.investor-contact p {
+  font-size: 1rem !important;
+  margin-bottom: 0.2rem;
+  color: #1a1a1a !important;
+}
+
+.investor-contact a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+  .inquiry-buttons {
+    flex-direction: column;
+  }
+  
+  .btn-red, .btn-maroon {
+    width: 100%;
   }
 }
