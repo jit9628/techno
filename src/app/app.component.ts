@@ -14,10 +14,19 @@ export class AppComponent implements AfterViewInit, OnDestroy {
   private animationId: number | null = null;
   showScrollBtn = false;
   isDarkMode = false;
+  isMenuOpen = false;
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
     this.showScrollBtn = window.pageYOffset > 400;
+  }
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  closeMenu() {
+    this.isMenuOpen = false;
   }
 
   scrollToTop() {
