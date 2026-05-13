@@ -1,6 +1,8 @@
 import { Component, AfterViewInit, OnDestroy, HostListener } from '@angular/core';
-import { RouterOutlet, RouterLink } from '@angular/router';
+import { RouterOutlet, RouterLink, Router, NavigationEnd } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { Title, Meta } from '@angular/platform-browser';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +12,32 @@ import { CommonModule } from '@angular/common';
   styleUrl: './app.component.css'
 })
 export class AppComponent implements AfterViewInit, OnDestroy {
-  title = 'divijix technology';
+  title = 'DJT Technology (formerly Divijix Technology)';
+
+  constructor(
+    private router: Router,
+    private titleService: Title,
+    private metaService: Meta
+  ) {
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe(() => {
+      this.updateTitle();
+    });
+  }
+
+  updateTitle() {
+    const url = this.router.url;
+    if (url.includes('insight')) {
+      this.titleService.setTitle('Insights | DJT Technology (formerly Divijix)');
+    } else if (url.includes('contact')) {
+      this.titleService.setTitle('Contact Us | DJT Technology (formerly Divijix)');
+    } else if (url.includes('about')) {
+      this.titleService.setTitle('About Our Journey | Divijix to DJT Technology');
+    } else {
+      this.titleService.setTitle('DJT Technology (formerly Divijix) | Digital Innovation');
+    }
+  }
   private animationId: number | null = null;
   showScrollBtn = false;
   isDarkMode = false;

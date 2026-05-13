@@ -96,6 +96,83 @@ export class InsightDetailComponent implements OnInit {
         <h3>A Call to Action for Founders</h3>
         <p>We partner with visionary founders to turn their bold ideas into market-leading products. Our case studies are a testament to what is possible when technology and vision align perfectly.</p>
       `
+    },
+    'divijix-to-djt': {
+      title: 'Why Divijix Technology is now DJT Technology: A Journey of Innovation',
+      subtitle: 'Exploring our rebranding from Divijix to DJT Technology and our commitment to the future.',
+      image: '/tech-vision.png',
+      content: `
+        <p>For years, <strong>Divijix Technology</strong> has been a trusted name in the Bangalore tech ecosystem. Today, we are proud to announce our evolution into <strong>DJT Technology</strong>. This change is more than just a new name; it's a reflection of our expanded vision for 2025 and beyond.</p>
+        
+        <h3>The Legacy of Divijix</h3>
+        <p>Divijix was founded with a simple goal: to provide high-quality engineering services to startups. As we grew, our impact expanded globally. We became known as <strong>Divijix Bangalore</strong>'s leading innovation hub, helping dozens of founders turn ideas into scaleable businesses.</p>
+        
+        <h3>The Transition to DJT Technology</h3>
+        <p>Why the change? As we integrated deeper into AI and enterprise-level digital transformation, we realized we needed a brand that encompassed our full spectrum of services. DJT Technology (formerly Divijix) represents our three core values: Digital Excellence, Journey-focused Partnership, and Tech-first Innovation.</p>
+        
+        <h3>What this means for you</h3>
+        <p>If you have been searching for <strong>Divijix</strong>, you are in the right place. All the expertise, the team, and the visionary leadership of Divyanshi remain at the core of DJT Technology. We continue to offer the same premium services that made Divijix famous, now with enhanced capabilities in Generative AI and Quantum readiness.</p>
+        
+        <h3>The Future is Bright</h3>
+        <p>Whether you know us as Divijix or DJT, our mission remains the same: to empower your business through cutting-edge technology. Join us as we step into this new chapter of innovation.</p>
+      `
+    },
+    'remote-first': {
+      title: 'The Remote-First Advantage: How DJT Technology Delivers Global Excellence',
+      subtitle: 'Why our remote-first culture is our greatest strength in building world-class products.',
+      image: '/ai-business.png',
+      content: `
+        <p>At <strong>DJT Technology</strong>, we believe that talent knows no borders. That's why we operate as a <strong>remote-first company</strong>. By embracing remote work, we tap into the best engineering talent across the globe, ensuring our clients receive top-tier solutions regardless of geography.</p>
+        
+        <h3>Why Remote-First?</h3>
+        <p>Traditional offices are a thing of the past for agile startups. Our remote model allows for:</p>
+        <ul>
+          <li><strong>24/7 Productivity:</strong> Our distributed team ensures that progress on your project never stops.</li>
+          <li><strong>Cost Efficiency:</strong> We invest in talent and technology rather than expensive real estate, passing those savings to our clients.</li>
+          <li><strong>Deep Focus:</strong> Our engineers work in environments where they are most productive, leading to higher quality code and faster delivery.</li>
+        </ul>
+        
+        <h3>Building Trust Remotely</h3>
+        <p>Communication is the key to our success. We use state-of-the-art collaboration tools to keep our clients in the loop at every stage of the development lifecycle. Whether you are a founder in New York or a startup in Bangalore, DJT Technology is right there with you.</p>
+      `
+    },
+    'gen-ai-2024': {
+      title: 'Generative AI: The New Frontier for Modern Enterprises',
+      subtitle: 'How DJT Technology is helping businesses integrate GenAI to automate complex workflows.',
+      image: '/ai-innovation.png',
+      content: `
+        <p>Generative AI is transforming how we work, create, and innovate. At DJT Technology, we are helping companies move beyond the hype and implement real-world <strong>GenAI solutions</strong> that drive measurable ROI.</p>
+        
+        <h3>Real-World Applications</h3>
+        <p>From automated content creation to intelligent code generation, the possibilities are endless:</p>
+        <ul>
+          <li><strong>Custom LLMs:</strong> We build and fine-tune large language models tailored to your specific business data.</li>
+          <li><strong>AI Agents:</strong> Developing autonomous agents that can handle customer inquiries, scheduling, and data entry.</li>
+          <li><strong>Enhanced Creativity:</strong> Using AI to assist in graphic design and video editing, reducing production time by half.</li>
+        </ul>
+        
+        <h3>Our Expertise</h3>
+        <p>Our team of AI specialists understands the nuances of prompt engineering, model optimization, and data privacy. We ensure that your AI integration is not only powerful but also secure and ethical.</p>
+      `
+    },
+    'startup-scaling': {
+      title: 'Scaling from 0 to 1: A Founder’s Guide to Tech Infrastructure',
+      subtitle: 'Essential tips for early-stage founders on building a scalable tech stack from day one.',
+      image: '/tech-vision.png',
+      content: `
+        <p>Scaling a startup is hard. Building the right tech foundation shouldn't be. At DJT Technology, we've helped numerous founders navigate the transition from a <strong>Minimum Viable Product (MVP)</strong> to a scalable enterprise platform.</p>
+        
+        <h3>Common Pitfalls to Avoid</h3>
+        <p>Many startups fail not because of a bad idea, but because their technology couldn't keep up with their growth. Avoid these mistakes:</p>
+        <ul>
+          <li><strong>Over-Engineering:</strong> Don't build for a million users when you have ten. Build for flexibility.</li>
+          <li><strong>Ignoring Security:</strong> Data breaches can kill a young startup. Secure your infrastructure from day one.</li>
+          <li><strong>Technical Debt:</strong> Quick fixes today can become massive headaches tomorrow. Balance speed with quality.</li>
+        </ul>
+        
+        <h3>The DJT Approach</h3>
+        <p>We partner with founders to build "Elastic Infrastructure" that grows as they grow. Using cloud-native technologies like AWS and Docker, we ensure your platform is always ready for the next wave of users.</p>
+      `
     }
   };
 
