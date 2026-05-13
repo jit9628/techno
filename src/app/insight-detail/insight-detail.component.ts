@@ -38,7 +38,7 @@ export class InsightDetailComponent implements OnInit {
     'ai-innovation': {
       title: 'Accelerating AI-Powered Innovation: Beyond the Chatbot',
       subtitle: 'How we leverage Generative AI and LLMs to solve real-world enterprise bottlenecks.',
-      author: 'Jitendra',
+      author: 'Jitendra Shukla',
       date: 'May 5, 2024',
       image: '/ai-innovation.png',
       content: `
@@ -86,7 +86,7 @@ export class InsightDetailComponent implements OnInit {
     'remote-first': {
       title: 'The Remote-First Advantage: Scaling Without Borders',
       subtitle: 'How we built a high-performance engineering culture without a central office.',
-      author: 'Jitendra',
+      author: 'Jitendra Shukla',
       date: 'May 8, 2024',
       image: '/ai-business.png',
       content: `
@@ -123,7 +123,7 @@ export class InsightDetailComponent implements OnInit {
     'startup-scaling': {
       title: 'Scaling from 0 to 1: A Founder’s Guide to Tech Infrastructure',
       subtitle: 'Essential tips for early-stage founders on building a scalable tech stack from day one.',
-      author: 'Jitendra',
+      author: 'Jitendra Shukla',
       date: 'May 18, 2024',
       image: '/tech-vision.png',
       content: `
