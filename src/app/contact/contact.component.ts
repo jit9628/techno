@@ -185,21 +185,32 @@ export class ContactComponent {
     this.http.post('http://localhost:3000/api/contact', this.contactForm).subscribe({
       next: (res: any) => {
         this.isSubmitting = false;
+        
+        const message = `New Contact Query:\nName: ${this.contactForm.name}\nEmail: ${this.contactForm.email}\nSubject: ${this.contactForm.subject}\nMessage: ${this.contactForm.message}`;
+        const encodedMessage = encodeURIComponent(message);
+        
+        const waUrl1 = `https://wa.me/919628718599?text=${encodedMessage}`;
+        const waUrl2 = `https://wa.me/918009799550?text=${encodedMessage}`;
+
         Swal.fire({
           title: 'Success!',
-          text: res.message || 'Message sent successfully!',
-          icon: 'success',
+          html: `
+            <p>Your message is received. Now, select which founder to notify on WhatsApp:</p>
+            <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 15px;">
+              <a href="${waUrl1}" target="_blank" class="swal2-confirm swal2-styled" style="background-color: #25d366; text-decoration: none; margin: 0; padding: 12px;">Notify on WhatsApp (9628718599)</a>
+              <a href="${waUrl2}" target="_blank" class="swal2-confirm swal2-styled" style="background-color: #128c7e; text-decoration: none; margin: 0; padding: 12px;">Notify on WhatsApp (8009799550)</a>
+            </div>
+          `,
+          showConfirmButton: true,
+          confirmButtonText: 'I Have Notified',
           confirmButtonColor: '#0070f3'
+        }).then(() => {
+          this.contactForm = { name: '', email: '', subject: 'general', message: '' };
         });
-        this.contactForm = { name: '', email: '', subject: 'general', message: '' };
       },
       error: (err) => {
         this.isSubmitting = false;
-        Swal.fire({
-          title: 'Error!',
-          text: 'Something went wrong. Please try again.',
-          icon: 'error'
-        });
+        Swal.fire('Error', 'Something went wrong. Please try again.', 'error');
       }
     });
   }

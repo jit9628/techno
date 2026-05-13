@@ -83,14 +83,41 @@ export class HomeComponent implements OnInit, AfterViewInit {
     });
   }
 
-  onContactWhatsApp() {
-    if (!this.contactForm.name || !this.contactForm.message) {
-      Swal.fire('Error', 'Please enter your name and message.', 'error');
+  onSubmitContact() {
+    if (!this.contactForm.name || !this.contactForm.email || !this.contactForm.message) {
+      Swal.fire('Error', 'Please fill in all required fields.', 'error');
       return;
     }
-    const text = `*New Contact Message*%0A*Name:* ${this.contactForm.name}%0A*Email:* ${this.contactForm.email}%0A*Subject:* ${this.contactForm.subject}%0A*Message:* ${this.contactForm.message}`;
-    const whatsappUrl = `https://wa.me/918009799550?text=${text}`;
-    window.open(whatsappUrl, '_blank');
+
+    this.http.post('http://localhost:3000/api/contact', this.contactForm).subscribe({
+      next: (res: any) => {
+        // Construct WhatsApp message
+        const message = `New Home Contact Query:\nName: ${this.contactForm.name}\nEmail: ${this.contactForm.email}\nSubject: ${this.contactForm.subject}\nMessage: ${this.contactForm.message}`;
+        const encodedMessage = encodeURIComponent(message);
+        
+        const waUrl1 = `https://wa.me/918009799550?text=${encodedMessage}`;
+        const waUrl2 = `https://wa.me/919628718599?text=${encodedMessage}`;
+
+        Swal.fire({
+          title: 'Success!',
+          html: `
+            <p>Message received. Select a founder to notify on WhatsApp:</p>
+            <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 15px;">
+              <a href="${waUrl1}" target="_blank" class="swal2-confirm swal2-styled" style="background-color: #25d366; text-decoration: none; margin: 0; padding: 12px;">Notify on WhatsApp (8009799550)</a>
+              <a href="${waUrl2}" target="_blank" class="swal2-confirm swal2-styled" style="background-color: #128c7e; text-decoration: none; margin: 0; padding: 12px;">Notify on WhatsApp (9628718599)</a>
+            </div>
+          `,
+          showConfirmButton: true,
+          confirmButtonText: 'Done',
+          confirmButtonColor: '#0070f3'
+        }).then(() => {
+          this.contactForm = { name: '', email: '', subject: '', message: '' };
+        });
+      },
+      error: (err) => {
+        Swal.fire('Error', 'Something went wrong. Please try again.', 'error');
+      }
+    });
   }
 
   setTab(tab: string) {
@@ -108,16 +135,32 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
 
     this.isSubmittingQuote = true;
-    this.http.post('https://www.divijixtechnology.com/api/quote', this.quoteForm).subscribe({
+    this.http.post('http://localhost:3000/api/contact', this.quoteForm).subscribe({
       next: (res: any) => {
         this.isSubmittingQuote = false;
+        
+        // Construct WhatsApp message
+        const message = `New Quote Request:\nName: ${this.quoteForm.name}\nEmail: ${this.quoteForm.email}\nPhone: ${this.quoteForm.phone}\nDescription: ${this.quoteForm.description}`;
+        const encodedMessage = encodeURIComponent(message);
+        
+        const waUrl1 = `https://wa.me/919628718599?text=${encodedMessage}`;
+        const waUrl2 = `https://wa.me/918009799550?text=${encodedMessage}`;
+
         Swal.fire({
-          title: 'Success!',
-          text: 'Your quote request has been sent.',
-          icon: 'success',
-          confirmButtonColor: '#004a99'
+          title: 'Quote Request Received!',
+          html: `
+            <p>Select a founder to notify on WhatsApp for a faster quote:</p>
+            <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 15px;">
+              <a href="${waUrl1}" target="_blank" class="swal2-confirm swal2-styled" style="background-color: #25d366; text-decoration: none; margin: 0; padding: 12px;">Notify on WhatsApp (9628718599)</a>
+              <a href="${waUrl2}" target="_blank" class="swal2-confirm swal2-styled" style="background-color: #128c7e; text-decoration: none; margin: 0; padding: 12px;">Notify on WhatsApp (8009799550)</a>
+            </div>
+          `,
+          showConfirmButton: true,
+          confirmButtonText: 'Done',
+          confirmButtonColor: '#0070f3'
+        }).then(() => {
+          this.quoteForm = { name: '', email: '', phone: '', description: '' };
         });
-        this.quoteForm = { name: '', email: '', phone: '', description: '' };
       },
       error: (err) => {
         this.isSubmittingQuote = false;

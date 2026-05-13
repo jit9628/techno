@@ -25,13 +25,15 @@ app.get('/api/batches', (req, res) => {
 
 app.post('/api/internship', (req, res) => {
   const application = req.body;
-  console.log('New Internship Application:', application);
-  res.status(201).json({ message: 'Application received successfully!', id: Date.now() });
+  console.log('--- New Internship Application ---');
+  console.log('Data:', application);
+  res.status(201).json({ message: 'Application received successfully!' });
 });
 
 app.post('/api/contact', (req, res) => {
-  const message = req.body;
-  console.log('New Contact Message:', message);
+  const data = req.body;
+  console.log('--- New Inquiry Received ---');
+  console.log('Data:', data);
   res.status(200).json({ message: 'Message sent successfully!' });
 });
 
