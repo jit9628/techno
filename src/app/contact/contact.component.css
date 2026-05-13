@@ -1,5 +1,5 @@
 .contact-hero {
-  padding: 160px 0 80px;
+  padding: 140px 0 30px;
   text-align: center;
   background: radial-gradient(circle at center, rgba(0, 112, 243, 0.05) 0%, transparent 70%);
 }
@@ -19,7 +19,7 @@
 }
 
 .contact-details {
-  padding: 60px 0 100px;
+  padding: 20px 0 100px;
 }
 
 .contact-grid {
