@@ -61,7 +61,22 @@
   font-size: 1.4rem;
   color: rgba(255, 255, 255, 0.9);
   max-width: 800px;
-  margin: 0 auto;
+  margin: 0 auto 1.5rem;
+}
+
+.meta-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.divider {
+  color: var(--primary-blue);
+  font-weight: 700;
 }
 
 .content-section {

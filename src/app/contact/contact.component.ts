@@ -201,9 +201,7 @@ export class ContactComponent {
               <a href="${waUrl2}" target="_blank" class="swal2-confirm swal2-styled" style="background-color: #128c7e; text-decoration: none; margin: 0; padding: 12px;">Notify on WhatsApp (8009799550)</a>
             </div>
           `,
-          showConfirmButton: true,
-          confirmButtonText: 'I Have Notified',
-          confirmButtonColor: '#0070f3'
+          showConfirmButton: false
         }).then(() => {
           this.contactForm = { name: '', email: '', subject: 'general', message: '' };
         });

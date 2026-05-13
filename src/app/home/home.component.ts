@@ -107,9 +107,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
               <a href="${waUrl2}" target="_blank" class="swal2-confirm swal2-styled" style="background-color: #128c7e; text-decoration: none; margin: 0; padding: 12px;">Notify on WhatsApp (9628718599)</a>
             </div>
           `,
-          showConfirmButton: true,
-          confirmButtonText: 'Done',
-          confirmButtonColor: '#0070f3'
+          showConfirmButton: false
         }).then(() => {
           this.contactForm = { name: '', email: '', subject: '', message: '' };
         });
@@ -155,9 +153,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
               <a href="${waUrl2}" target="_blank" class="swal2-confirm swal2-styled" style="background-color: #128c7e; text-decoration: none; margin: 0; padding: 12px;">Notify on WhatsApp (8009799550)</a>
             </div>
           `,
-          showConfirmButton: true,
-          confirmButtonText: 'Done',
-          confirmButtonColor: '#0070f3'
+          showConfirmButton: false
         }).then(() => {
           this.quoteForm = { name: '', email: '', phone: '', description: '' };
         });
