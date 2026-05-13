@@ -168,4 +168,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
       }
     });
   }
+
+  scrollToContact() {
+    const element = document.getElementById('contact');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 }

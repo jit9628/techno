@@ -140,6 +140,30 @@ export class InsightDetailComponent implements OnInit {
         <h3>The DJT Approach</h3>
         <p>We partner with founders to build "Elastic Infrastructure" that grows as they grow. Using cloud-native technologies like AWS, Docker, and Terraform, we ensure your platform is always ready for the next wave of users.</p>
       `
+    },
+    'innovation-future': {
+      title: 'The Power of Innovation: Shaping the Future of Global Enterprise',
+      subtitle: 'A leadership perspective on how DJT Technology is driving the next wave of digital transformation.',
+      author: 'Divyanshi Shukla',
+      date: 'May 20, 2024',
+      image: '/ai-brain-bg.png',
+      content: `
+        <p>Innovation is the heartbeat of <strong>DJT Technology</strong>. Led by our Founder & CEO, Divyanshi, we are on a mission to redefine how global enterprises interact with technology. We don't just follow trends; we set them.</p>
+        
+        <h3>The Philosophy of Big Thinking</h3>
+        <p>"To build the future, you must first imagine it," says Divyanshi. Our approach is not just about building software; it's about building solutions that solve the most complex challenges of the modern world. We focus on <strong>Scalable Ecosystems</strong> and <strong>AI-Human Synergy</strong>.</p>
+        
+        <h3>Our Innovation Roadmap</h3>
+        <ul>
+          <li><strong>Next-Gen Architectures:</strong> Moving beyond microservices to event-driven, edge-computing models.</li>
+          <li><strong>Cognitive Automation:</strong> Using AI to not just automate tasks, but to assist in high-level strategic decision-making.</li>
+          <li><strong>Sustainable Engineering:</strong> Building high-performance systems with a minimal carbon footprint.</li>
+          <li><strong>Cloud Reliability:</strong> Implementing 99.99% uptime strategies for mission-critical applications.</li>
+        </ul>
+        
+        <h3>Join the Revolution</h3>
+        <p>We partner with visionary founders to turn their bold ideas into market-leading products. If you have a vision for the future, DJT Technology has the engineering expertise to make it a reality.</p>
+      `
     }
   };
 

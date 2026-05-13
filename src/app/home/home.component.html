@@ -5,7 +5,7 @@
       <div class="banner-left-content">
         <h2 class="banner-title">Build Your Dream Product. Scale with Speed.</h2>
         <p class="banner-subtitle">We help early-stage startups and visionary founders turn bold ideas into market-ready products with agile engineering and AI-driven innovation.</p>
-        <button class="btn-read-more">EXPLORE INNOVATION</button>
+        <button class="btn-read-more" routerLink="/insight/ai-innovation">EXPLORE INNOVATION</button>
       </div>
     </div>
     <div class="banner-right">
@@ -374,9 +374,12 @@
 <section class="career-section">
   <div class="container">
     <div class="section-header">
-      <h2 class="section-title">Join a Community of Innovators</h2>
-      <p class="section-subtitle">We are looking for passionate problem solvers and creative thinkers to help us build the future.</p>
-      <button class="btn-primary" routerLink="/batches">VIEW OPPORTUNITIES</button>
+      <h2 class="section-title">Innovation Without Borders</h2>
+      <p class="section-subtitle">Our remote-first team is dedicated to building the next generation of digital excellence. Join us in shaping the future of tech.</p>
+      <div class="button-group">
+        <button class="btn-primary" routerLink="/apply">WORK WITH US</button>
+        <button class="btn-secondary" (click)="scrollToContact()">LET'S TALK</button>
+      </div>
     </div>
     <div class="career-grid">
       <div class="career-col side">
