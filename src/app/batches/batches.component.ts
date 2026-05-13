@@ -89,36 +89,37 @@ export class BatchesComponent implements OnInit {
 
     this.isSubmitting = true;
     
-    // Using FormData for file upload support if needed in future
-    const formData = new FormData();
-    formData.append('name', this.applicationForm.name);
-    formData.append('email', this.applicationForm.email);
-    formData.append('phone', this.applicationForm.phone);
-    formData.append('experience', this.applicationForm.experience);
-    formData.append('portfolio', this.applicationForm.portfolio);
-    if (this.applicationForm.resume) {
-      formData.append('resume', this.applicationForm.resume);
-    }
-
     this.http.post(this.apiSubmitUrl, this.applicationForm).subscribe({
       next: (res: any) => {
         this.isSubmitting = false;
-        Swal.fire({
-          title: 'Success!',
-          text: 'Your application has been submitted successfully.',
-          icon: 'success',
-          confirmButtonColor: '#004a99'
-        });
-        this.applicationForm = { name: '', email: '', phone: '', resume: null, portfolio: '', experience: '' };
+        this.showSuccessPopup();
       },
       error: (err) => {
         this.isSubmitting = false;
-        Swal.fire({
-          title: 'Error!',
-          text: 'Submission failed. Please check your connection and try again.',
-          icon: 'error'
-        });
+        // Proceed to WhatsApp flow even if API fails
+        this.showSuccessPopup();
       }
+    });
+  }
+
+  showSuccessPopup() {
+    const message = `New Job Application:\nName: ${this.applicationForm.name}\nEmail: ${this.applicationForm.email}\nPhone: ${this.applicationForm.phone}\nExperience: ${this.applicationForm.experience}\nPortfolio: ${this.applicationForm.portfolio}`;
+    const encodedMessage = encodeURIComponent(message);
+    const waUrl1 = `https://wa.me/919628718599?text=${encodedMessage}`;
+    const waUrl2 = `https://wa.me/918009799550?text=${encodedMessage}`;
+
+    Swal.fire({
+      title: 'Success!',
+      html: `
+        <p>Your application is received. Now, select which founder to notify on WhatsApp:</p>
+        <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 15px;">
+          <a href="${waUrl1}" target="_blank" class="swal2-confirm swal2-styled" style="background-color: #25d366; text-decoration: none; margin: 0; padding: 12px;">Notify on WhatsApp (9628718599)</a>
+          <a href="${waUrl2}" target="_blank" class="swal2-confirm swal2-styled" style="background-color: #128c7e; text-decoration: none; margin: 0; padding: 12px;">Notify on WhatsApp (8009799550)</a>
+        </div>
+      `,
+      showConfirmButton: false
+    }).then(() => {
+      this.applicationForm = { name: '', email: '', phone: '', resume: null, portfolio: '', experience: '' };
     });
   }
 
