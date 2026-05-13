@@ -126,7 +126,7 @@ export class ContactComponent {
         },
         {
           label: "Retail Investors",
-          name: "Jitendra Shukla, Strategic Lead",
+          name: "Jitendra, Strategic Lead",
           tel: "+91 020 40109111",
           email: "jitendra@djttechnology.in"
         },

@@ -17,7 +17,7 @@ export class InsightDetailComponent implements OnInit {
     'mvp-to-scale': {
       title: 'From MVP to Scale: AI-Powered Disruption in Fintech',
       subtitle: 'A technical deep-dive into how we achieved 10x growth for a digital lending platform.',
-      author: 'Divyanshi Shukla',
+      author: 'Divyanshi',
       date: 'May 10, 2024',
       image: '/ai-business.png',
       content: `
@@ -38,7 +38,7 @@ export class InsightDetailComponent implements OnInit {
     'ai-innovation': {
       title: 'Accelerating AI-Powered Innovation: Beyond the Chatbot',
       subtitle: 'How we leverage Generative AI and LLMs to solve real-world enterprise bottlenecks.',
-      author: 'Jitendra Shukla',
+      author: 'Jitendra',
       date: 'May 5, 2024',
       image: '/ai-innovation.png',
       content: `
@@ -54,7 +54,7 @@ export class InsightDetailComponent implements OnInit {
     'vision-2025': {
       title: 'DJT Technology Vision 2025: Engineering the Next Decade',
       subtitle: 'Our roadmap for integrating Quantum computing, Ethical AI, and Sustainable Tech.',
-      author: 'Divyanshi Shukla',
+      author: 'Divyanshi',
       date: 'April 28, 2024',
       image: '/tech-vision.png',
       content: `
@@ -86,7 +86,7 @@ export class InsightDetailComponent implements OnInit {
     'remote-first': {
       title: 'The Remote-First Advantage: Scaling Without Borders',
       subtitle: 'How we built a high-performance engineering culture without a central office.',
-      author: 'Jitendra Shukla',
+      author: 'Jitendra',
       date: 'May 8, 2024',
       image: '/ai-business.png',
       content: `
@@ -102,7 +102,7 @@ export class InsightDetailComponent implements OnInit {
     'gen-ai-2024': {
       title: 'Generative AI: The New Frontier for Modern Enterprises',
       subtitle: 'How DJT Technology is helping businesses integrate GenAI to automate complex workflows.',
-      author: 'Divyanshi Shukla',
+      author: 'Divyanshi',
       date: 'May 15, 2024',
       image: '/ai-innovation.png',
       content: `
@@ -123,7 +123,7 @@ export class InsightDetailComponent implements OnInit {
     'startup-scaling': {
       title: 'Scaling from 0 to 1: A Founder’s Guide to Tech Infrastructure',
       subtitle: 'Essential tips for early-stage founders on building a scalable tech stack from day one.',
-      author: 'Jitendra Shukla',
+      author: 'Jitendra',
       date: 'May 18, 2024',
       image: '/tech-vision.png',
       content: `
@@ -144,7 +144,7 @@ export class InsightDetailComponent implements OnInit {
     'innovation-future': {
       title: 'The Power of Innovation: Shaping the Future of Global Enterprise',
       subtitle: 'A leadership perspective on how DJT Technology is driving the next wave of digital transformation.',
-      author: 'Divyanshi Shukla',
+      author: 'Divyanshi',
       date: 'May 20, 2024',
       image: '/ai-brain-bg.png',
       content: `
