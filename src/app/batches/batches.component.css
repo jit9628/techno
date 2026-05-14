@@ -1,13 +1,15 @@
 /* Hero Section */
 .career-hero {
-  height: 80vh;
+  height: 85vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 112, 243, 0.6)), url('/career-hero.png');
   background-size: cover;
   background-position: center;
-  color: #1a1a1a;
+  background-attachment: fixed;
+  color: #ffffff;
   padding-top: 80px;
 }
 
@@ -17,17 +19,21 @@
 }
 
 .hero-title {
-  font-size: 4rem;
+  font-size: 4.5rem;
   font-weight: 800;
   margin-bottom: 1.5rem;
   line-height: 1.1;
-  color: #1a1a1a;
+  color: #ffffff;
+  text-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
 .hero-subtitle {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   margin-bottom: 2.5rem;
-  color: #444444;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero-actions {
@@ -37,18 +43,19 @@
 }
 
 .btn-outline {
-  background: transparent;
-  border: 2px solid var(--primary-blue);
-  color: var(--primary-blue);
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid #ffffff;
+  color: #ffffff;
   padding: 0.8rem 2rem;
   border-radius: 50px;
   font-weight: 600;
+  backdrop-filter: blur(5px);
   transition: all 0.3s ease;
 }
 
 .btn-outline:hover {
-  background: var(--primary-blue);
-  color: white;
+  background: #ffffff;
+  color: var(--primary-blue);
 }
 
 /* Sections General */
