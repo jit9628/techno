@@ -137,7 +137,7 @@ export class InsightDetailComponent implements OnInit {
           <li><strong>Technical Debt:</strong> Quick fixes today can become massive headaches tomorrow. Balance speed with quality using TDD.</li>
         </ul>
         
-        <h3>The DJT Approach</h3>
+        <h3>The Divijix Approach</h3>
         <p>We partner with founders to build "Elastic Infrastructure" that grows as they grow. Using cloud-native technologies like AWS, Docker, and Terraform, we ensure your platform is always ready for the next wave of users.</p>
       `
     },
