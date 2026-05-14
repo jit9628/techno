@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://djttechnology.com/sitemap.xml
+Sitemap: https://divijixtechnology.com/sitemap.xml

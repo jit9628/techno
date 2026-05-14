@@ -122,18 +122,19 @@ export class ContactComponent {
           label: "Institutional Investors",
           name: "Divyanshi, Founder & CEO",
           tel: "+91 120 6176000",
-          email: "founder@djttechnology.in"
+          email: "founder@divijixtechnology.com"
         },
         {
           label: "Retail Investors",
-          name: "Jitendra Shukla, Strategic Lead",
-          tel: "+91 020 40109111",
-          email: "jitendra@djttechnology.in"
+          name: "Jitendra Shukla",
+          role: "Co-Founder",
+          email: "jitendra@divijixtechnology.com"
         },
         {
           label: "Nodal Officer",
-          name: "Divyanshi, Founder & CEO",
-          email: "legal@djttechnology.in"
+          name: "Legal",
+          role: "Dept",
+          email: "legal@divijixtechnology.com"
         }
       ],
       bottomButton: { text: "CONTACT INVESTOR RELATIONS", class: "btn-red", action: "scroll" }
