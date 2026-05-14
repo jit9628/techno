@@ -100,3 +100,12 @@ button {
   box-shadow: 0 8px 25px var(--blue-glow);
   filter: brightness(1.1);
 }
+
+/* SweetAlert2 Glass Custom Style */
+.glass-popup {
+  border-radius: 24px !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1) !important;
+}
+

@@ -14,7 +14,7 @@
         <div class="industry-icon">{{ item.icon }}</div>
         <h3 class="industry-title">{{ item.title }}</h3>
         <p class="industry-desc">{{ item.desc }}</p>
-        <button class="btn-outline">Explore Solutions</button>
+        <button class="btn-outline" (click)="onExploreClick(item.title)">Explore Solutions</button>
       </div>
     </div>
   </div>
