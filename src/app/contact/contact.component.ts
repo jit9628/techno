@@ -21,6 +21,7 @@ interface InquirySection {
 interface InvestorContact {
   label: string;
   name: string;
+  role?: string;
   tel?: string;
   email: string;
 }
@@ -122,19 +123,19 @@ export class ContactComponent {
           label: "Institutional Investors",
           name: "Divyanshi, Founder & CEO",
           tel: "+91 120 6176000",
-          email: "founder@divijixtechnology.com"
+          email: "divijixtechnology@zoho.in"
         },
         {
           label: "Retail Investors",
           name: "Jitendra Shukla",
           role: "Co-Founder",
-          email: "jitendra@divijixtechnology.com"
+          email: "divijixtechnology@zoho.in"
         },
         {
           label: "Nodal Officer",
           name: "Legal",
           role: "Dept",
-          email: "legal@divijixtechnology.com"
+          email: "divijixtechnology@zoho.in"
         }
       ],
       bottomButton: { text: "CONTACT INVESTOR RELATIONS", class: "btn-red", action: "scroll" }

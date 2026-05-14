@@ -18,7 +18,7 @@ export class InsightDetailComponent implements OnInit {
       title: 'From MVP to Scale: AI-Powered Disruption in Fintech',
       subtitle: 'A technical deep-dive into how we achieved 10x growth for a digital lending platform.',
       author: 'Divyanshi',
-      date: 'May 10, 2024',
+      date: 'May 10, 2026',
       image: '/ai-business.png',
       content: `
         <p>In the competitive landscape of Fintech, speed and scalability are the ultimate differentiators. At <strong>Divijix Technology</strong>, we recently partnered with a Bangalore-based lending startup that was struggling with their legacy PHP monolith. Their MVP was functional but couldn't handle more than 500 concurrent users without crashing.</p>
@@ -39,7 +39,7 @@ export class InsightDetailComponent implements OnInit {
       title: 'Accelerating AI-Powered Innovation: Beyond the Chatbot',
       subtitle: 'How we leverage Generative AI and LLMs to solve real-world enterprise bottlenecks.',
       author: 'Jitendra Shukla',
-      date: 'May 5, 2024',
+      date: 'May 5, 2026',
       image: '/ai-innovation.png',
       content: `
         <p>Many companies think AI is just about adding a chatbot. At Divijix Technology, we prove it’s much more. We’ve been working with global logistics firms to implement <strong>Predictive Maintenance</strong> and <strong>Route Optimization</strong> using custom-trained AI models.</p>
@@ -55,7 +55,7 @@ export class InsightDetailComponent implements OnInit {
       title: 'Divijix Technology Vision 2025: Engineering the Next Decade',
       subtitle: 'Our roadmap for integrating Quantum computing, Ethical AI, and Sustainable Tech.',
       author: 'Divyanshi',
-      date: 'April 28, 2024',
+      date: 'April 28, 2026',
       image: '/tech-vision.png',
       content: `
         <p>The next five years will redefine humanity's relationship with technology. As the CEO of <strong>Divijix Technology</strong>, my vision is to ensure our partners are not just prepared for this shift, but leading it. We are focusing on three core pillars: <strong>Quantum Readiness, Ethical AI, and Cloud Sustainability</strong>.</p>
@@ -71,7 +71,7 @@ export class InsightDetailComponent implements OnInit {
       title: 'The Journey of Divijix Technology: Engineering the Future',
       subtitle: 'From a small startup in Bangalore to a global digital powerhouse.',
       author: 'Team Divijix',
-      date: 'May 12, 2024',
+      date: 'May 12, 2026',
       image: '/ai-brain-bg.png',
       content: `
         <p>The story of <strong>Divijix Technology</strong> is one of relentless innovation and growth. It was born in a small apartment in Bangalore with a big dream: to redefine how technology empowers businesses. Today, that dream is a reality as we serve clients globally.</p>
@@ -87,7 +87,7 @@ export class InsightDetailComponent implements OnInit {
       title: 'The Remote-First Advantage: Scaling Without Borders',
       subtitle: 'How we built a high-performance engineering culture without a central office.',
       author: 'Jitendra Shukla',
-      date: 'May 8, 2024',
+      date: 'May 8, 2026',
       image: '/ai-business.png',
       content: `
         <p>At Divijix Technology, we don't have an office address. We have a global presence. Being <strong>Remote-First</strong> isn't a cost-saving measure; it's a talent-acquisition strategy. By removing the 40-mile radius limit of an office, we've built a team of the best engineers from across India and beyond.</p>
@@ -99,11 +99,11 @@ export class InsightDetailComponent implements OnInit {
         <p>We don't track hours; we track impact. Our culture is built on mutual trust and clear deliverables. This autonomy leads to higher employee satisfaction, which directly translates into better quality code for our clients.</p>
       `
     },
-    'gen-ai-2024': {
+    'gen-ai-2026': {
       title: 'Generative AI: The New Frontier for Modern Enterprises',
       subtitle: 'How Divijix Technology is helping businesses integrate GenAI to automate complex workflows.',
       author: 'Divyanshi',
-      date: 'May 15, 2024',
+      date: 'May 15, 2026',
       image: '/ai-innovation.png',
       content: `
         <p>Generative AI is transforming how we work, create, and innovate. At <strong>Divijix Technology</strong>, we are helping companies move beyond the hype and implement real-world <strong>GenAI solutions</strong> that drive measurable ROI.</p>
@@ -124,7 +124,7 @@ export class InsightDetailComponent implements OnInit {
       title: 'Scaling from 0 to 1: A Founder’s Guide to Tech Infrastructure',
       subtitle: 'Essential tips for early-stage founders on building a scalable tech stack from day one.',
       author: 'Jitendra Shukla',
-      date: 'May 18, 2024',
+      date: 'May 18, 2026',
       image: '/tech-vision.png',
       content: `
         <p>Scaling a startup is hard. Building the right tech foundation shouldn't be. At Divijix Technology, we've helped numerous founders navigate the transition from a <strong>Minimum Viable Product (MVP)</strong> to a scalable enterprise platform.</p>
@@ -145,7 +145,7 @@ export class InsightDetailComponent implements OnInit {
       title: 'The Power of Innovation: Shaping the Future of Global Enterprise',
       subtitle: 'A leadership perspective on how Divijix Technology is driving the next wave of digital transformation.',
       author: 'Divyanshi',
-      date: 'May 20, 2024',
+      date: 'May 20, 2026',
       image: '/ai-brain-bg.png',
       content: `
         <p>Innovation is the heartbeat of <strong>Divijix Technology</strong>. Led by our Founder & CEO, Divyanshi, we are on a mission to redefine how global enterprises interact with technology. We don't just follow trends; we set them.</p>
