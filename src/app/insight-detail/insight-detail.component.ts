@@ -21,7 +21,7 @@ export class InsightDetailComponent implements OnInit {
       date: 'May 10, 2024',
       image: '/ai-business.png',
       content: `
-        <p>In the competitive landscape of Fintech, speed and scalability are the ultimate differentiators. At <strong>DJT Technology</strong>, we recently partnered with a Bangalore-based lending startup that was struggling with their legacy PHP monolith. Their MVP was functional but couldn't handle more than 500 concurrent users without crashing.</p>
+        <p>In the competitive landscape of Fintech, speed and scalability are the ultimate differentiators. At <strong>Divijix Technology</strong>, we recently partnered with a Bangalore-based lending startup that was struggling with their legacy PHP monolith. Their MVP was functional but couldn't handle more than 500 concurrent users without crashing.</p>
         
         <h3>The Architecture Overhaul</h3>
         <p>We didn't just patch the system; we re-engineered it from the ground up using a <strong>Microservices Architecture</strong>. Our stack included:</p>
@@ -42,7 +42,7 @@ export class InsightDetailComponent implements OnInit {
       date: 'May 5, 2024',
       image: '/ai-innovation.png',
       content: `
-        <p>Many companies think AI is just about adding a chatbot. At DJT Technology, we prove it’s much more. We’ve been working with global logistics firms to implement <strong>Predictive Maintenance</strong> and <strong>Route Optimization</strong> using custom-trained AI models.</p>
+        <p>Many companies think AI is just about adding a chatbot. At Divijix Technology, we prove it’s much more. We’ve been working with global logistics firms to implement <strong>Predictive Maintenance</strong> and <strong>Route Optimization</strong> using custom-trained AI models.</p>
         
         <h3>The Technical Challenge</h3>
         <p>A global shipping partner was losing millions due to unplanned equipment downtime. We built a proprietary data pipeline that ingests IoT sensor data in real-time, processing it through an <strong>Anomaly Detection Model</strong>.</p>
@@ -52,13 +52,13 @@ export class InsightDetailComponent implements OnInit {
       `
     },
     'vision-2025': {
-      title: 'DJT Technology Vision 2025: Engineering the Next Decade',
+      title: 'Divijix Technology Vision 2025: Engineering the Next Decade',
       subtitle: 'Our roadmap for integrating Quantum computing, Ethical AI, and Sustainable Tech.',
       author: 'Divyanshi',
       date: 'April 28, 2024',
       image: '/tech-vision.png',
       content: `
-        <p>The next five years will redefine humanity's relationship with technology. As the CEO of <strong>DJT Technology</strong>, my vision is to ensure our partners are not just prepared for this shift, but leading it. We are focusing on three core pillars: <strong>Quantum Readiness, Ethical AI, and Cloud Sustainability</strong>.</p>
+        <p>The next five years will redefine humanity's relationship with technology. As the CEO of <strong>Divijix Technology</strong>, my vision is to ensure our partners are not just prepared for this shift, but leading it. We are focusing on three core pillars: <strong>Quantum Readiness, Ethical AI, and Cloud Sustainability</strong>.</p>
         
         <h3>The Quantum Leap</h3>
         <p>We are already exploring quantum-safe cryptography and optimization algorithms. While full-scale quantum computers are still years away, the algorithms we develop today will be the foundations of tomorrow's secure financial systems.</p>
@@ -67,20 +67,20 @@ export class InsightDetailComponent implements OnInit {
         <p>As AI becomes ubiquitous, transparency is paramount. We are building "Explainable AI" (XAI) frameworks into all our products, ensuring that every AI-driven decision can be audited and understood by humans.</p>
       `
     },
-    'divijix-to-djt': {
-      title: 'Why Divijix Technology is now DJT Technology: The Rebranding Story',
-      subtitle: 'The evolution of our identity from a boutique agency to a global tech powerhouse.',
-      author: 'Team DJT',
+    'divijix-journey': {
+      title: 'The Journey of Divijix Technology: Engineering the Future',
+      subtitle: 'From a small startup in Bangalore to a global digital powerhouse.',
+      author: 'Team Divijix',
       date: 'May 12, 2024',
       image: '/ai-brain-bg.png',
       content: `
-        <p>For those who have been with us since the beginning, the name <strong>Divijix Technology</strong> holds a lot of memories. It was born in a small apartment in Bangalore with a big dream. Today, that dream has evolved into <strong>DJT Technology</strong>.</p>
+        <p>The story of <strong>Divijix Technology</strong> is one of relentless innovation and growth. It was born in a small apartment in Bangalore with a big dream: to redefine how technology empowers businesses. Today, that dream is a reality as we serve clients globally.</p>
         
-        <h3>Why the Change?</h3>
-        <p>As our projects grew from simple websites to complex AI ecosystems, we needed a brand that reflected our maturity and global reach. DJT stands for <strong>Digital, Journey, and Trust</strong>. It’s a promise to our clients that we will be their partner through every step of their digital evolution.</p>
+        <h3>Our Core Philosophy</h3>
+        <p>As our projects grew from simple websites to complex AI ecosystems, our core values remained the same: <strong>Digital Excellence, Journey of Growth, and Trust of Partners</strong>. We are committed to being a partner through every step of our clients' digital evolution.</p>
         
-        <h3>The "Divijix" Legacy</h3>
-        <p>While the name on the door has changed, the soul of the company remains the same. The same relentless pursuit of quality, the same obsession with client success, and the same leadership that built Divijix are now driving DJT Technology forward.</p>
+        <h3>The Future of Divijix</h3>
+        <p>We continue to pursue the same relentless quest for quality and client success that defined us from day one. With our expanded capabilities in AI and Cloud, Divijix Technology is now better equipped than ever to lead the next wave of digital transformation.</p>
       `
     },
     'remote-first': {
@@ -90,7 +90,7 @@ export class InsightDetailComponent implements OnInit {
       date: 'May 8, 2024',
       image: '/ai-business.png',
       content: `
-        <p>At DJT Technology, we don't have an office address. We have a global presence. Being <strong>Remote-First</strong> isn't a cost-saving measure; it's a talent-acquisition strategy. By removing the 40-mile radius limit of an office, we've built a team of the best engineers from across India and beyond.</p>
+        <p>At Divijix Technology, we don't have an office address. We have a global presence. Being <strong>Remote-First</strong> isn't a cost-saving measure; it's a talent-acquisition strategy. By removing the 40-mile radius limit of an office, we've built a team of the best engineers from across India and beyond.</p>
         
         <h3>Our Communication Stack</h3>
         <p>How do we stay synchronized? We've perfected the art of <strong>Asynchronous Communication</strong>. Using tools like Slack for instant updates, Jira for sprint management, and GitHub for collaborative coding, we ensure that every developer is empowered to work at their peak productivity.</p>
@@ -101,12 +101,12 @@ export class InsightDetailComponent implements OnInit {
     },
     'gen-ai-2024': {
       title: 'Generative AI: The New Frontier for Modern Enterprises',
-      subtitle: 'How DJT Technology is helping businesses integrate GenAI to automate complex workflows.',
+      subtitle: 'How Divijix Technology is helping businesses integrate GenAI to automate complex workflows.',
       author: 'Divyanshi',
       date: 'May 15, 2024',
       image: '/ai-innovation.png',
       content: `
-        <p>Generative AI is transforming how we work, create, and innovate. At <strong>DJT Technology</strong>, we are helping companies move beyond the hype and implement real-world <strong>GenAI solutions</strong> that drive measurable ROI.</p>
+        <p>Generative AI is transforming how we work, create, and innovate. At <strong>Divijix Technology</strong>, we are helping companies move beyond the hype and implement real-world <strong>GenAI solutions</strong> that drive measurable ROI.</p>
         
         <h3>Real-World Applications</h3>
         <p>From automated content creation to intelligent code generation, the possibilities are endless:</p>
@@ -127,7 +127,7 @@ export class InsightDetailComponent implements OnInit {
       date: 'May 18, 2024',
       image: '/tech-vision.png',
       content: `
-        <p>Scaling a startup is hard. Building the right tech foundation shouldn't be. At DJT Technology, we've helped numerous founders navigate the transition from a <strong>Minimum Viable Product (MVP)</strong> to a scalable enterprise platform.</p>
+        <p>Scaling a startup is hard. Building the right tech foundation shouldn't be. At Divijix Technology, we've helped numerous founders navigate the transition from a <strong>Minimum Viable Product (MVP)</strong> to a scalable enterprise platform.</p>
         
         <h3>Common Pitfalls to Avoid</h3>
         <p>Many startups fail not because of a bad idea, but because their technology couldn't keep up with their growth. Avoid these mistakes:</p>
@@ -143,12 +143,12 @@ export class InsightDetailComponent implements OnInit {
     },
     'innovation-future': {
       title: 'The Power of Innovation: Shaping the Future of Global Enterprise',
-      subtitle: 'A leadership perspective on how DJT Technology is driving the next wave of digital transformation.',
+      subtitle: 'A leadership perspective on how Divijix Technology is driving the next wave of digital transformation.',
       author: 'Divyanshi',
       date: 'May 20, 2024',
       image: '/ai-brain-bg.png',
       content: `
-        <p>Innovation is the heartbeat of <strong>DJT Technology</strong>. Led by our Founder & CEO, Divyanshi, we are on a mission to redefine how global enterprises interact with technology. We don't just follow trends; we set them.</p>
+        <p>Innovation is the heartbeat of <strong>Divijix Technology</strong>. Led by our Founder & CEO, Divyanshi, we are on a mission to redefine how global enterprises interact with technology. We don't just follow trends; we set them.</p>
         
         <h3>The Philosophy of Big Thinking</h3>
         <p>"To build the future, you must first imagine it," says Divyanshi. Our approach is not just about building software; it's about building solutions that solve the most complex challenges of the modern world. We focus on <strong>Scalable Ecosystems</strong> and <strong>AI-Human Synergy</strong>.</p>
@@ -162,7 +162,7 @@ export class InsightDetailComponent implements OnInit {
         </ul>
         
         <h3>Join the Revolution</h3>
-        <p>We partner with visionary founders to turn their bold ideas into market-leading products. If you have a vision for the future, DJT Technology has the engineering expertise to make it a reality.</p>
+        <p>We partner with visionary founders to turn their bold ideas into market-leading products. If you have a vision for the future, Divijix Technology has the engineering expertise to make it a reality.</p>
       `
     }
   };
