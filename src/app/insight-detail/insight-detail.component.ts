@@ -1,0 +1,220 @@
+import { Component, OnInit, Inject } from '@angular/core';
+import { CommonModule, DOCUMENT } from '@angular/common';
+import { ActivatedRoute, RouterModule } from '@angular/router';
+import { Title, Meta } from '@angular/platform-browser';
+
+@Component({
+  selector: 'app-insight-detail',
+  standalone: true,
+  imports: [CommonModule, RouterModule],
+  templateUrl: './insight-detail.component.html',
+  styleUrl: './insight-detail.component.css'
+})
+export class InsightDetailComponent implements OnInit {
+  insightId: string | null = null;
+  insightData: any = null;
+
+  insights: { [key: string]: any } = {
+    'mvp-to-scale': {
+      title: 'From MVP to Scale: AI-Powered Disruption in Fintech',
+      subtitle: 'A technical deep-dive into how we achieved 10x growth for a digital lending platform.',
+      author: 'Divyanshi',
+      date: 'May 10, 2026',
+      image: '/ai-business.png',
+      content: `
+        <p>In the competitive landscape of Fintech, speed and scalability are the ultimate differentiators. At <strong>Divijix Technologies Pvt. Ltd.</strong>, we recently partnered with a Jaipur-based lending startup that was struggling with their legacy PHP monolith. Their MVP was functional but couldn't handle more than 500 concurrent users without crashing.</p>
+        
+        <h3>The Architecture Overhaul</h3>
+        <p>We didn't just patch the system; we re-engineered it from the ground up using a <strong>Microservices Architecture</strong>. Our stack included:</p>
+        <ul>
+          <li><strong>Frontend:</strong> Angular 17 with Signals for reactive state management.</li>
+          <li><strong>Backend:</strong> Spring Boot 3.2 microservices orchestrated via Kubernetes (EKS).</li>
+          <li><strong>AI Engine:</strong> Python-based risk assessment models using XGBoost and TensorFlow.</li>
+        </ul>
+        
+        <h3>Real Results</h3>
+        <p>By implementing an <strong>AI-driven automated KYC process</strong>, we reduced the loan approval time from 48 hours to just 15 minutes. The system now seamlessly handles 50,000+ concurrent requests, and the client reported a 300% increase in loan disbursements within the first quarter of going live.</p>
+      `
+    },
+    'ai-innovation': {
+      title: 'Accelerating AI-Powered Innovation: Beyond the Chatbot',
+      subtitle: 'How we leverage Generative AI and LLMs to solve real-world enterprise bottlenecks.',
+      author: 'Jitendra Shukla',
+      date: 'May 5, 2026',
+      image: '/ai-innovation.png',
+      content: `
+        <p>Many companies think AI is just about adding a chatbot. At Divijix Technologies Pvt. Ltd., we prove it’s much more. We’ve been working with global logistics firms to implement <strong>Predictive Maintenance</strong> and <strong>Route Optimization</strong> using custom-trained AI models.</p>
+        
+        <h3>The Technical Challenge</h3>
+        <p>A global shipping partner was losing millions due to unplanned equipment downtime. We built a proprietary data pipeline that ingests IoT sensor data in real-time, processing it through an <strong>Anomaly Detection Model</strong>.</p>
+        
+        <h3>Impact of Innovation</h3>
+        <p>Our solution predicted engine failures with 94% accuracy up to 72 hours in advance. This transition from reactive to proactive maintenance saved our client approximately $2.4M in operational costs annually. This is what we call <em>Innovation with Purpose</em>.</p>
+      `
+    },
+    'vision-2025': {
+      title: 'Divijix Technologies Pvt. Ltd. Vision 2025: Engineering the Next Decade',
+      subtitle: 'Our roadmap for integrating Quantum computing, Ethical AI, and Sustainable Tech.',
+      author: 'Divyanshi',
+      date: 'April 28, 2026',
+      image: '/tech-vision.png',
+      content: `
+        <p>The next five years will redefine humanity's relationship with technology. As the CEO of <strong>Divijix Technologies Pvt. Ltd.</strong>, my vision is to ensure our partners are not just prepared for this shift, but leading it. We are focusing on three core pillars: <strong>Quantum Readiness, Ethical AI, and Cloud Sustainability</strong>.</p>
+        
+        <h3>The Quantum Leap</h3>
+        <p>We are already exploring quantum-safe cryptography and optimization algorithms. While full-scale quantum computers are still years away, the algorithms we develop today will be the foundations of tomorrow's secure financial systems.</p>
+        
+        <h3>Commitment to Ethics</h3>
+        <p>As AI becomes ubiquitous, transparency is paramount. We are building "Explainable AI" (XAI) frameworks into all our products, ensuring that every AI-driven decision can be audited and understood by humans.</p>
+      `
+    },
+    'divijix-journey': {
+      title: 'The Journey of Divijix Technologies Pvt. Ltd.: Engineering the Future',
+      subtitle: 'From a small startup in Jaipur to a global digital powerhouse.',
+      author: 'Team Divijix',
+      date: 'May 12, 2026',
+      image: '/ai-brain-bg.jpg',
+      content: `
+        <p>The story of <strong>Divijix Technologies Pvt. Ltd.</strong> is one of relentless innovation and growth. It was born in a small apartment in Jaipur with a big dream: to redefine how technology empowers businesses. Today, that dream is a reality as we serve clients globally.</p>
+        
+        <h3>Our Core Philosophy</h3>
+        <p>As our projects grew from simple websites to complex AI ecosystems, our core values remained the same: <strong>Digital Excellence, Journey of Growth, and Trust of Partners</strong>. We are committed to being a partner through every step of our clients' digital evolution.</p>
+        
+        <h3>The Future of Divijix</h3>
+        <p>We continue to pursue the same relentless quest for quality and client success that defined us from day one. With our expanded capabilities in AI and Cloud, Divijix Technologies Pvt. Ltd. is now better equipped than ever to lead the next wave of digital transformation.</p>
+      `
+    },
+    'remote-first': {
+      title: 'The Remote-First Advantage: Scaling Without Borders',
+      subtitle: 'How we built a high-performance engineering culture without a central office.',
+      author: 'Jitendra Shukla',
+      date: 'May 8, 2026',
+      image: '/ai-business.png',
+      content: `
+        <p>At Divijix Technologies Pvt. Ltd., we don't have an office address. We have a global presence. Being <strong>Remote-First</strong> isn't a cost-saving measure; it's a talent-acquisition strategy. By removing the 40-mile radius limit of an office, we've built a team of the best engineers from across India and beyond.</p>
+        
+        <h3>Our Communication Stack</h3>
+        <p>How do we stay synchronized? We've perfected the art of <strong>Asynchronous Communication</strong>. Using tools like Slack for instant updates, Jira for sprint management, and GitHub for collaborative coding, we ensure that every developer is empowered to work at their peak productivity.</p>
+        
+        <h3>Trust over Tracking</h3>
+        <p>We don't track hours; we track impact. Our culture is built on mutual trust and clear deliverables. This autonomy leads to higher employee satisfaction, which directly translates into better quality code for our clients.</p>
+      `
+    },
+    'gen-ai-2026': {
+      title: 'Generative AI: The New Frontier for Modern Enterprises',
+      subtitle: 'How Divijix Technologies Pvt. Ltd. is helping businesses integrate GenAI to automate complex workflows.',
+      author: 'Divyanshi',
+      date: 'May 15, 2026',
+      image: '/ai-innovation.png',
+      content: `
+        <p>Generative AI is transforming how we work, create, and innovate. At <strong>Divijix Technologies Pvt. Ltd.</strong>, we are helping companies move beyond the hype and implement real-world <strong>GenAI solutions</strong> that drive measurable ROI.</p>
+        
+        <h3>Real-World Applications</h3>
+        <p>From automated content creation to intelligent code generation, the possibilities are endless:</p>
+        <ul>
+          <li><strong>Custom LLMs:</strong> We build and fine-tune large language models (LLMs) like GPT-4 and Llama 3 tailored to your specific business data.</li>
+          <li><strong>AI Agents:</strong> Developing autonomous agents that can handle customer inquiries, scheduling, and automated data entry.</li>
+          <li><strong>Workflow Automation:</strong> Using AI to assist in complex decision-making processes, reducing manual overhead by up to 60%.</li>
+        </ul>
+        
+        <h3>Our Expertise</h3>
+        <p>Our team of AI specialists understands the nuances of prompt engineering, model optimization, and data privacy. We ensure that your AI integration is not only powerful but also secure and ethical.</p>
+      `
+    },
+    'startup-scaling': {
+      title: 'Scaling from 0 to 1: A Founder’s Guide to Tech Infrastructure',
+      subtitle: 'Essential tips for early-stage founders on building a scalable tech stack from day one.',
+      author: 'Jitendra Shukla',
+      date: 'May 18, 2026',
+      image: '/tech-vision.png',
+      content: `
+        <p>Scaling a startup is hard. Building the right tech foundation shouldn't be. At Divijix Technologies Pvt. Ltd., we've helped numerous founders navigate the transition from a <strong>Minimum Viable Product (MVP)</strong> to a scalable enterprise platform.</p>
+        
+        <h3>Common Pitfalls to Avoid</h3>
+        <p>Many startups fail not because of a bad idea, but because their technology couldn't keep up with their growth. Avoid these mistakes:</p>
+        <ul>
+          <li><strong>Over-Engineering:</strong> Don't build for a million users when you have ten. Build for flexibility using serverless architectures.</li>
+          <li><strong>Ignoring Security:</strong> Data breaches can kill a young startup. Secure your infrastructure with IAM and VPCs from day one.</li>
+          <li><strong>Technical Debt:</strong> Quick fixes today can become massive headaches tomorrow. Balance speed with quality using TDD.</li>
+        </ul>
+        
+        <h3>The Divijix Approach</h3>
+        <p>We partner with founders to build "Elastic Infrastructure" that grows as they grow. Using cloud-native technologies like AWS, Docker, and Terraform, we ensure your platform is always ready for the next wave of users.</p>
+      `
+    },
+    'innovation-future': {
+      title: 'The Power of Innovation: Shaping the Future of Global Enterprise',
+      subtitle: 'A leadership perspective on how Divijix Technologies Pvt. Ltd. is driving the next wave of digital transformation.',
+      author: 'Divyanshi',
+      date: 'May 20, 2026',
+      image: '/ai-brain-bg.jpg',
+      content: `
+        <p>Innovation is the heartbeat of <strong>Divijix Technologies Pvt. Ltd.</strong>. Led by our Founder & CEO, Divyanshi, we are on a mission to redefine how global enterprises interact with technology. We don't just follow trends; we set them.</p>
+        
+        <h3>The Philosophy of Big Thinking</h3>
+        <p>"To build the future, you must first imagine it," says Divyanshi. Our approach is not just about building software; it's about building solutions that solve the most complex challenges of the modern world. We focus on <strong>Scalable Ecosystems</strong> and <strong>AI-Human Synergy</strong>.</p>
+        
+        <h3>Our Innovation Roadmap</h3>
+        <ul>
+          <li><strong>Next-Gen Architectures:</strong> Moving beyond microservices to event-driven, edge-computing models.</li>
+          <li><strong>Cognitive Automation:</strong> Using AI to not just automate tasks, but to assist in high-level strategic decision-making.</li>
+          <li><strong>Sustainable Engineering:</strong> Building high-performance systems with a minimal carbon footprint.</li>
+          <li><strong>Cloud Reliability:</strong> Implementing 99.99% uptime strategies for mission-critical applications.</li>
+        </ul>
+        
+        <h3>Join the Revolution</h3>
+        <p>We partner with visionary founders to turn their bold ideas into market-leading products. If you have a vision for the future, Divijix Technologies Pvt. Ltd. has the engineering expertise to make it a reality.</p>
+      `
+    }
+  };
+
+  constructor(
+    private route: ActivatedRoute,
+    private titleService: Title,
+    private metaService: Meta,
+    @Inject(DOCUMENT) private document: Document
+  ) {}
+
+  ngOnInit(): void {
+    this.route.paramMap.subscribe(params => {
+      this.insightId = params.get('id');
+      if (this.insightId && this.insights[this.insightId]) {
+        this.insightData = this.insights[this.insightId];
+        
+        // Update Title
+        const pageTitle = `${this.insightData.title} | Divijix Technologies Pvt. Ltd.`;
+        this.titleService.setTitle(pageTitle);
+        
+        // Update Meta Tags
+        this.metaService.updateTag({ name: 'description', content: this.insightData.subtitle });
+        this.metaService.updateTag({ name: 'keywords', content: `fintech, AI, software development, ${this.insightId}, Divijix` });
+        
+        // Update Open Graph (og:) tags
+        this.metaService.updateTag({ property: 'og:title', content: pageTitle });
+        this.metaService.updateTag({ property: 'og:description', content: this.insightData.subtitle });
+        this.metaService.updateTag({ property: 'og:image', content: 'https://divijixtechnology.com' + this.insightData.image });
+        
+        // Update Twitter tags
+        this.metaService.updateTag({ property: 'twitter:title', content: pageTitle });
+        this.metaService.updateTag({ property: 'twitter:description', content: this.insightData.subtitle });
+        this.metaService.updateTag({ property: 'twitter:image', content: 'https://divijixtechnology.com' + this.insightData.image });
+
+        // Update Canonical Link
+        const canonicalUrl = `https://divijixtechnology.com/insight/${this.insightId}`;
+        let link: HTMLLinkElement | null = this.document.querySelector("link[rel='canonical']");
+        if (link) {
+          link.setAttribute('href', canonicalUrl);
+        } else {
+          link = this.document.createElement('link');
+          link.setAttribute('rel', 'canonical');
+          link.setAttribute('href', canonicalUrl);
+          this.document.head.appendChild(link);
+        }
+
+        // Update OG URL and Twitter URL
+        this.metaService.updateTag({ property: 'og:url', content: canonicalUrl });
+        this.metaService.updateTag({ property: 'twitter:url', content: canonicalUrl });
+      }
+    });
+  }
+}

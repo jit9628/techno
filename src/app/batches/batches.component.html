@@ -1,0 +1,151 @@
+<!-- Hero Section -->
+<section class="career-hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1 class="hero-title">Build the Future <span class="blue-text">at Startup Speed</span></h1>
+      <p class="hero-subtitle">Join a high-energy team of builders and hackers who are disrupting industries with cutting-edge technology.</p>
+      <div class="hero-actions">
+        <button class="btn-primary" (click)="scrollToSection('application-form')">Apply Now</button>
+        <button class="btn-outline" (click)="scrollToSection('open-positions')">View Open Roles</button>
+        <button class="btn-outline" (click)="scrollToSection('why-join-us')">Join Team</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Join Us Section -->
+<section id="why-join-us" class="why-join-us">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Why Build with <span class="blue-text">Divijix Technologies Pvt. Ltd.?</span></h2>
+      <p class="section-subtitle">We're a fast-growing startup where your impact is immediate and your voice actually matters.</p>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit-card glass" *ngFor="let benefit of benefits">
+        <div class="benefit-icon">{{ benefit.icon }}</div>
+        <h3>{{ benefit.title }}</h3>
+        <p>{{ benefit.desc }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Company Culture Section -->
+<section class="culture-section">
+  <div class="container">
+    <div class="culture-grid">
+      <div class="culture-content">
+        <h2 class="section-title">Our <span class="blue-text">DNA</span></h2>
+        <p>At Divijix Technologies Pvt. Ltd., we move fast and break barriers. Our culture is built on ownership, radical transparency, and the grit to solve "impossible" problems.</p>
+        <ul class="culture-points">
+          <li><strong>Team Collaboration:</strong> We win together, supporting each other at every step.</li>
+          <li><strong>Innovation:</strong> We embrace new ideas and encourage creative problem-solving.</li>
+          <li><strong>Diversity:</strong> A diverse team brings diverse perspectives, making us stronger.</li>
+          <li><strong>Work-Life Balance:</strong> We value your personal time as much as your professional contributions.</li>
+        </ul>
+      </div>
+      <div class="culture-image">
+        <img src="/tech-vision.png" alt="Company Culture" class="glass">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Open Positions Section -->
+<section id="open-positions" class="open-positions">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Open <span class="blue-text">Positions</span></h2>
+      <p class="section-subtitle">Find the role that fits your passion and expertise.</p>
+    </div>
+    <div class="jobs-grid">
+      <div class="job-card glass" *ngFor="let job of jobs">
+        <div class="job-type">{{ job.type }}</div>
+        <h3>{{ job.title }}</h3>
+        <div class="job-meta">
+          <span>📍 {{ job.loc }}</span>
+          <span>💼 {{ job.exp }}</span>
+          <span>💰 {{ job.salary }}</span>
+        </div>
+        <button class="btn-primary small-btn" (click)="scrollToSection('application-form')">Apply Button</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Recruitment Process Section -->
+<section class="recruitment-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Recruitment <span class="blue-text">Process</span></h2>
+      <p class="section-subtitle">Our journey to find the best talent is simple and transparent.</p>
+    </div>
+    <div class="process-timeline">
+      <div class="process-step" *ngFor="let step of recruitmentSteps">
+        <div class="step-number">{{ step.id }}</div>
+        <div class="step-content">
+          <h4>{{ step.title }}</h4>
+          <p>{{ step.desc }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Internship Section -->
+<section class="internship-section">
+  <div class="container">
+    <div class="glass internship-banner">
+      <div class="banner-content">
+        <h2>Launch Your Journey as a <span class="blue-text">Founding Intern</span></h2>
+        <p>Get your hands dirty with real code on real products. We offer high-impact internships for students ready to skip the busy work and start building.</p>
+        <button class="btn-primary" (click)="scrollToSection('application-form')">Explore Internships</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Application Form Section -->
+<section id="application-form" class="application-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Submit <span class="blue-text">Application</span></h2>
+      <p class="section-subtitle">Fill in the details below to start your journey with Divijix Technologies Pvt. Ltd..</p>
+    </div>
+    <div class="form-container glass">
+      <form class="application-form" (ngSubmit)="submitApplication()">
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" [(ngModel)]="applicationForm.name" name="name" placeholder="Enter your name" required>
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" [(ngModel)]="applicationForm.email" name="email" placeholder="Enter your email" required>
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" [(ngModel)]="applicationForm.phone" name="phone" placeholder="Enter your phone" required>
+          </div>
+          <div class="form-group">
+            <label>Experience (Years)</label>
+            <input type="text" [(ngModel)]="applicationForm.experience" name="experience" placeholder="e.g. 2 years or Fresher">
+          </div>
+          <div class="form-group">
+            <label>Portfolio Link</label>
+            <input type="url" [(ngModel)]="applicationForm.portfolio" name="portfolio" placeholder="https://yourportfolio.com">
+          </div>
+          <div class="form-group">
+            <label>Resume Upload (PDF)</label>
+            <input type="file" (change)="onFileChange($event)" accept=".pdf,.doc,.docx">
+          </div>
+        </div>
+        <button type="submit" class="btn-primary w-100" [disabled]="isSubmitting">
+          {{ isSubmitting ? 'Submitting...' : 'Submit Application' }}
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
