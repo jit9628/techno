@@ -1,27 +1,16 @@
 import { Routes } from '@angular/router';
-import { InternshipFormComponent } from './internship-form/internship-form.component';
-import { HomeComponent } from './home/home.component';
-import { PrivacyComponent } from './privacy/privacy.component';
-import { DisclaimerComponent } from './disclaimer/disclaimer.component';
-import { TermsComponent } from './terms/terms.component';
-import { CookiePolicyComponent } from './cookie-policy/cookie-policy.component';
-import { BatchesComponent } from './batches/batches.component';
-import { AboutComponent } from './about/about.component';
-import { ContactComponent } from './contact/contact.component';
-import { IndustriesComponent } from './industries/industries.component';
-import { InsightDetailComponent } from './insight-detail/insight-detail.component';
 
 export const routes: Routes = [
-    { path: '', component: HomeComponent },
-    { path: 'apply', component: InternshipFormComponent },
-    { path: 'industries', component: IndustriesComponent },
-    { path: 'insight/:id', component: InsightDetailComponent },
-    { path: 'privacy', component: PrivacyComponent },
-    { path: 'disclaimer', component: DisclaimerComponent },
-    { path: 'terms', component: TermsComponent },
-    { path: 'cookie-policy', component: CookiePolicyComponent },
-    { path: 'batches', component: BatchesComponent },
-    { path: 'about', component: AboutComponent },
-    { path: 'contact', component: ContactComponent },
+    { path: '', loadComponent: () => import('./home/home.component').then(m => m.HomeComponent) },
+    { path: 'apply', loadComponent: () => import('./internship-form/internship-form.component').then(m => m.InternshipFormComponent) },
+    { path: 'industries', loadComponent: () => import('./industries/industries.component').then(m => m.IndustriesComponent) },
+    { path: 'insight/:id', loadComponent: () => import('./insight-detail/insight-detail.component').then(m => m.InsightDetailComponent) },
+    { path: 'privacy', loadComponent: () => import('./privacy/privacy.component').then(m => m.PrivacyComponent) },
+    { path: 'disclaimer', loadComponent: () => import('./disclaimer/disclaimer.component').then(m => m.DisclaimerComponent) },
+    { path: 'terms', loadComponent: () => import('./terms/terms.component').then(m => m.TermsComponent) },
+    { path: 'cookie-policy', loadComponent: () => import('./cookie-policy/cookie-policy.component').then(m => m.CookiePolicyComponent) },
+    { path: 'batches', loadComponent: () => import('./batches/batches.component').then(m => m.BatchesComponent) },
+    { path: 'about', loadComponent: () => import('./about/about.component').then(m => m.AboutComponent) },
+    { path: 'contact', loadComponent: () => import('./contact/contact.component').then(m => m.ContactComponent) },
     { path: '**', redirectTo: '' }
 ];
